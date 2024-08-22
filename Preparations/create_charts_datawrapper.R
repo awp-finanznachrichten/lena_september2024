@@ -32,9 +32,9 @@ monate_it <- c("gennaio","febbraio","marzo",
 vorlagen_uebersicht <- c("O1i9P","Ocame","ot8Mm")
 vorlagen_gemeinden <- c("EuC56","JJ03i","CPwql")
 vorlagen_kantone <- c("HH2Hs","G7A2k","sobvY")
-vorlagen_kantone_special_initiative <- c("G8SGc","G7A2k","sobvY")
-vorlagen_kantone_special_gegenvorschlag <- c("IBfYe","G7A2k","sobvY")
-vorlagen_kantone_special_stichentscheid <- c("n8lsJ","G7A2k","sobvY")
+vorlagen_kantone_special_initiative <- c("xftvb","LS2ff","FAOHL")
+vorlagen_kantone_special_gegenvorschlag <- c("NNXj8","FsoiR","qiUTe")
+vorlagen_kantone_special_stichentscheid <- c("UfpM1","cDy1R","ygRKA")
 
 #Titel aktuelle Vorlagen
 vorlagen_all <- rbind(vorlagen,vorlagen_fr)
