@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<newsMessage xmlns="http://iptc.org/std/nar/2006-10-01/">
+  <header>
+    <sent>2024-08-27T10:47:55+02:00</sent>
+  </header>
+
+  <itemSet>
+    <newsItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://iptc.org/std/nar/2006-10-01/" standard="NewsML-G2" standardversion="2.28" conformance="power" xml:lang="de" guid="urn:newsml:keystone-sda.ch:20240827:20240827104755220783210628614" version="1">
+      <catalogRef href="http://www.iptc.org/std/catalog/catalog.IPTC-G2-Standards_34.xml"/>
+      <catalogRef href="http://www.keystone-sda.ch/NewsML_G2/SDA-G2-Catalog.xml"/>
+
+      <itemMeta>
+        <itemClass qcode="ninat:text"/>
+        <provider qcode="nprov:KSDA">
+           <name>sda</name>
+        </provider>
+        <versionCreated>2024-08-27T10:47:55+02:00</versionCreated>
+        <pubStatus qcode="stat:withheld"/>
+        <generator versioninfo="0.3.4">XML::NewsML_G2</generator>
+        <service qcode="sdasvc:bsd"></service>
+        <edNote role="sdanote:note">DIES IST EIN TEST</edNote>
+        <edNote role="sdalena:memo">DIES IST EIN TEST</edNote>
+        
+      </itemMeta>
+
+      <contentMeta>
+        <urgency>2</urgency>
+        <contentCreated>2024-08-27T10:47:55+02:00</contentCreated>
+        <creator>
+          <name>sda-robot</name>
+        </creator>
+        <altId>220783210628614</altId>
+        <dateline>Bern</dateline>
+        <language tag="de"/>
+        <genre qcode="sdagenre:RES">
+        </genre>
+
+        <!--storytypes-->
+        <subject type="cpnat:abstract" qcode="sdastorytype:tble"></subject>
+        
+        <!--media topics-->
+        <subject type="cpnat:abstract" qcode="sdamarschannel:POL"></subject>
+<subject type="cpnat:abstract" qcode="sdamarschannel:VOT"></subject>
+
+        <!--locations-->
+        <located type="loctype:city" qcode="sdamarsgeo:AAR">
+<name>Aarau</name>
+</located>
+  
+        <slugline>vot AG</slugline>
+        <headline>***TEST***Ergebnisse aus dem Kanton Aargau</headline>
+        <description role="drol:teaser"> </description>
+        <description role="drol:catchline"></description>
+      </contentMeta>
+
+      <contentSet>
+        <inlineXML contenttype="application/xhtml+xml">
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+              <title>***TEST***Ergebnisse aus dem Kanton Aargau</title>
+            </head>
+            <body>
+              <p class="lead"> </p>
+              <p class="paragraph">Prämienentlastungs-Initiative: NEIN</p>
+<table><tbody>
+<tr><td>Ja-Anteil: 34,11 Prozent (64'638 Stimmen)</td></tr>
+<tr><td>Nein-Anteil: 65,89 Prozent (124'876 Stimmen)</td></tr>
+<tr><td>Stimmbeteiligung: 43,03 Prozent</td></tr>
+<tr><td></td></tr>
+<tr><td>Stände: 7,5 Ja, 15,5 Nein (am Ständemehr gescheitert)</td></tr>
+<tr><td>Ja-Kantone: BS, FR, GE, JU, NE, TI, VD, VS</td></tr>
+<tr><td>Nein-Kantone: AG, AI, AR, BE, BL, GL, GR, LU, NW, OW, SG, SH, SO, SZ, TG, UR, ZG, ZH</td></tr>
+<tr><td></td></tr>
+<tr><td>SRG-Hochrechnung um 13:00 Uhr: 44 Prozent Ja, 56 Prozent Nein</td></tr>
+</tbody></table>
+<p class="paragraph">Kostenbremse-Initiative: NEIN</p>
+<table><tbody>
+<tr><td>Ja-Anteil: 33,03 Prozent (62'232 Stimmen)</td></tr>
+<tr><td>Nein-Anteil: 66,97 Prozent (126'181 Stimmen)</td></tr>
+<tr><td>Stimmbeteiligung: 42,92 Prozent</td></tr>
+<tr><td></td></tr>
+<tr><td>Stände: 5 Ja, 18 Nein (am Ständemehr gescheitert)</td></tr>
+<tr><td>Ja-Kantone: FR, JU, NE, TI, VS</td></tr>
+<tr><td>Nein-Kantone: AG, AI, AR, BE, BL, BS, GE, GL, GR, LU, NW, OW, SG, SH, SO, SZ, TG, UR, VD, ZG, ZH</td></tr>
+<tr><td></td></tr>
+<tr><td>SRG-Hochrechnung um 14:00 Uhr: 36 Prozent Ja, 64 Prozent Nein</td></tr>
+</tbody></table>
+<p class="paragraph">"Stopp-Impfpflicht"-Initiative: NEIN</p>
+<table><tbody>
+<tr><td>Ja-Anteil: 24,79 Prozent (46'815 Stimmen)</td></tr>
+<tr><td>Nein-Anteil: 75,21 Prozent (142'058 Stimmen)</td></tr>
+<tr><td>Stimmbeteiligung: 42,92 Prozent</td></tr>
+<tr><td></td></tr>
+<tr><td>Stände: 0 Ja, 23 Nein (am Ständemehr gescheitert)</td></tr>
+<tr><td>Ja-Kantone: -</td></tr>
+<tr><td>Nein-Kantone: AG, AI, AR, BE, BL, BS, FR, GE, GL, GR, JU, LU, NE, NW, OW, SG, SH, SO, SZ, TG, TI, UR, VD, VS, ZG, ZH</td></tr>
+<tr><td></td></tr>
+<tr><td>SRG-Hochrechnung um 13:00 Uhr: 25 Prozent Ja, 75 Prozent Nein</td></tr>
+</tbody></table>
+<p class="paragraph">Stromgesetz: JA</p>
+<table><tbody>
+<tr><td>Ja-Anteil: 63,62 Prozent (120'255 Stimmen)</td></tr>
+<tr><td>Nein-Anteil: 36,38 Prozent (68'769 Stimmen)</td></tr>
+<tr><td>Stimmbeteiligung: 42,95 Prozent</td></tr>
+<tr><td></td></tr>
+<tr><td>Stände: 23 Ja, 0 Nein (Ständemehr erreicht)</td></tr>
+<tr><td>Ja-Kantone: AG, AI, AR, BE, BL, BS, FR, GE, GL, GR, JU, LU, NE, NW, OW, SG, SH, SO, SZ, TG, TI, UR, VD, VS, ZG, ZH</td></tr>
+<tr><td>Nein-Kantone: -</td></tr>
+<tr><td></td></tr>
+<tr><td>SRG-Hochrechnung um 13:00 Uhr: 69 Prozent Ja, 31 Prozent Nein</td></tr>
+</tbody></table>
+
+            </body>
+          </html>
+        </inlineXML>
+      </contentSet>
+    </newsItem>
+  </itemSet>
+</newsMessage>

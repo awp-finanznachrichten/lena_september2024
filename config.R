@@ -14,6 +14,8 @@ library(git2r)
 library(DatawRappr)
 library(lubridate)
 library(httr)
+library(RCurl)
+
 cat("Benoetigte Bibliotheken geladen\n")
 
 #Welche Abstimmung?
@@ -21,10 +23,10 @@ abstimmung_date <- "September2024"
 voting_date <- "2024-09-22"
 
 #Mail
-DEFAULT_MAILS <- "contentdevelopment@keystone-sda.ch, robot-notification@awp.ch"
-#DEFAULT_MAILS <- "robot-notification@awp.ch"
+#DEFAULT_MAILS <- "contentdevelopment@keystone-sda.ch, robot-notification@awp.ch"
+DEFAULT_MAILS <- "robot-notification@awp.ch"
 
-res <- GET("https://app-prod-static-voteinfo.s3.eu-central-1.amazonaws.com/v1/ogd/sd-t-17-02-20240609-eidgAbstimmung.json")
+res <- GET("https://app-prod-static-voteinfo.s3.eu-central-1.amazonaws.com/v1/ogd/sd-t-17-02-20240922-eidgAbstimmung.json")
 json_data <- fromJSON(rawToChar(res$content), flatten = TRUE)
 
 res <- GET("https://app-prod-static-voteinfo.s3.eu-central-1.amazonaws.com/v1/ogd/sd-t-17-02-20240609-kantAbstimmung.json")
@@ -83,10 +85,15 @@ kantonal_add_special <- c(1,2)
 other_check <- FALSE
 
 ###Vorhandene Daten laden
-#daten_co2_bfs <- read_excel("Data/daten_co2_bfs.xlsx",skip=5)
-#daten_covid1_bfs <- read_excel("Data/daten_covid1_bfs.xlsx",skip=5)
-#daten_covid2_bfs <- read_excel("Data/daten_covid2_bfs.xlsx",skip=5)
-#cat("Daten zu historischen Abstimmungen geladen\n")
+data_hist <- fromJSON("./Data/sd-t-17-02-20100307-eidgAbstimmung.json", flatten = TRUE)
+data_hist <- get_results(data_hist,3,level="communal")
+data_hist <- data_hist %>%
+  select(Gemeinde_Nr,
+         Hist_Ja_Stimmen_In_Prozent = jaStimmenInProzent,
+         Hist_Ja_Stimmen_Absolut = jaStimmenAbsolut,
+         Hist_Nein_Stimmen_Absolut = neinStimmenAbsolut) %>%
+  mutate(Hist_Nein_Stimmen_In_Prozent = 100 - Hist_Ja_Stimmen_In_Prozent)
+data_hist <- na.omit(data_hist)
 
 #Metadaten Gemeinden und Kantone
 mydb <- connectDB(db_name="sda_votes")

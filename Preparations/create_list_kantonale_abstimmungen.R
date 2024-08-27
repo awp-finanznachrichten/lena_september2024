@@ -1,5 +1,5 @@
 #Working Directory definieren
-setwd("C:/Users/simon/OneDrive/LENA_Project/20240609_LENA_Abstimmungen")
+setwd("C:/Users/simon/OneDrive/LENA_Project/20240922_LENA_Abstimmungen")
 
 ###Config: Bibliotheken laden, Pfade/Links definieren, bereits vorhandene Daten laden
 source("config.R",encoding = "UTF-8")

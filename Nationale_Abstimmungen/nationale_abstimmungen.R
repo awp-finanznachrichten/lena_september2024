@@ -27,7 +27,7 @@ for (i in 1:length(vorlagen_short)) {
   
   results <- merge(results,Ja_Stimmen_Kanton)
   results_all <- results
-  
+
   #Alle Daten speichern
   write.csv(results_all,paste0("Output_Switzerland/",vorlagen_short[i],"_all_data.csv"), na = "", row.names = FALSE, fileEncoding = "UTF-8")
 
@@ -75,7 +75,6 @@ for (i in 1:length(vorlagen_short)) {
     other_check <- TRUE
     if (vorlagen$id[i] == "6590") {
       results_othervote <- get_results(json_data,i+1)
-
     } else if (vorlagen$id[i] == "6600") {
       results_othervote <- get_results(json_data,i-1)
     }
@@ -93,9 +92,9 @@ for (i in 1:length(vorlagen_short)) {
     #Historischer Vergleich (falls vorhanden)
 
     #Check Vorlagen-ID
-    if (vorlagen$id[i] == "6630") { 
+    if (vorlagen$id[i] == "6720") { 
       hist_check <- TRUE 
-      data_hist <- format_data_hist(daten_co2_bfs)
+      #data_hist <- format_data_hist(daten_bvg_bfs)
       results <- merge(results,data_hist,all.x = TRUE)
       if (other_check == FALSE) {
       results <- hist_storyfinder(results)
