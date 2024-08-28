@@ -1,23 +1,20 @@
-MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
-
-#Working Directory definieren
+#Set Working Path
+MAIN_PATH <- "C:/Users/simon/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
 setwd(MAIN_PATH)
 
-###Funktionen laden
-source("./Funktionen/functions_readin.R", encoding = "UTF-8")
-source("./Funktionen/functions_storyfinder.R", encoding = "UTF-8")
-source("./Funktionen/functions_storybuilder.R", encoding = "UTF-8")
-source("./Funktionen/functions_output.R", encoding = "UTF-8")
-source("./Funktionen/functions_github.R", encoding = "UTF-8")
-source("./tools/Funktionen/Utils.R", encoding = "UTF-8")
+#Load Libraries and Functions
+source("./Config/load_libraries_functions.R",encoding = "UTF-8")
 
-#Save texts? Simulation? Default FALSE
-save_texts <- FALSE
-simulation <- FALSE
+###Set Constants###
+source("./Config/set_constants.R",encoding = "UTF-8")
 
+###Load texts and metadata###
+source("./Config/load_texts_metadata.R",encoding = "UTF-8")
+
+#####START LOOP#####
 repeat{
-###Config: Bibliotheken laden, Pfade/Links definieren, bereits vorhandene Daten laden
-source("config.R",encoding = "UTF-8")
+###Load JSON Data
+source("./Config/load_json_data.R",encoding = "UTF-8")
 
 #Simulate Data (if needed)
 if (simulation == TRUE) {
@@ -35,8 +32,6 @@ timestamp_kantonal <- timestamps$last_update[1]
 time_check_national <- timestamp_national == json_data$timestamp
 time_check_kantonal <- timestamp_kantonal == json_data_kantone$timestamp
 
-#time_check_national <- FALSE
-#time_check_kantonal <- FALSE
 if ((time_check_national == TRUE) & (time_check_kantonal == TRUE)) {
 print("Keine neuen Daten gefunden")  
 } else {
@@ -60,13 +55,16 @@ if (time_check_kantonal == FALSE) {
   source("./Kantonale_Abstimmungen/kantonale_abstimmungen_uebersicht.R", encoding="UTF-8")
   
   ###Kantonale Abstimmungen###
+  if (length(kantonal_number) > 0) {
   source("./Kantonale_Abstimmungen/kantonale_abstimmungen.R", encoding="UTF-8")
+  }
   
   ###Kantonale Abstimmungen Sonderfälle###
+  if (length(kantonal_number_special) > 0) {
   source("./Kantonale_Abstimmungen/kantonale_abstimmungen_special.R", encoding="UTF-8")
-  
+  }
   #Make Commit
-  source("commit.R", encoding="UTF-8")
+  source("./Config/commit.R", encoding="UTF-8")
 }
 
 #Timestamp speichern

@@ -1,8 +1,8 @@
 mydb <- connectDB(db_name="sda_votes")
 rs <- dbSendQuery(mydb, paste0("SELECT * FROM votes_metadata WHERE date = '",voting_date,"' AND area_ID != 'CH' AND status = 'done'" ))
-votes_metadata <- DBI::fetch(rs,n=-1)
+votes_metadata_cantons <- DBI::fetch(rs,n=-1)
 dbDisconnectAll()
-completed_votes <- na.omit(unique(votes_metadata$spreadsheet))
+completed_votes <- na.omit(unique(votes_metadata_cantons$spreadsheet))
 
 for (k in 1:length(kantonal_short) ) {
   
@@ -138,9 +138,6 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short[k],"_texte.xlsx"))
   undertitel_fr <- "Aucun résultat n'est encore connu."
   undertitel_it <- "Nessun risultato è ancora noto."
 
-  hold <- FALSE
-  if (hold == FALSE) {
- 
     if (is.na(Ja_Stimmen_Kanton) == FALSE) {
       undertitel_de <- paste0("Die brieflichen Stimmen sind ausgezählt.<br>Stand: <b>",
                               round(Ja_Stimmen_Kanton,1)," %</b> Ja, <b>",
@@ -213,7 +210,7 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short[k],"_texte.xlsx"))
       print(paste0("Alle Daten der Abstimmung ",kantonal_short[k]," vorhanden"))
     }
     
-  }  
+    
   } else {
     cat(paste0("\nVorlage ",kantonal_short[k]," bereits komplett\n"))  
   }  

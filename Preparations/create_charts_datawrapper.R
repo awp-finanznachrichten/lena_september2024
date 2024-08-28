@@ -1,15 +1,21 @@
-#Working Directory definieren
-MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
+#Set Working Path
+MAIN_PATH <- "C:/Users/simon/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
+setwd(MAIN_PATH)
 
-###Funktionen laden
-source("./Funktionen/functions_readin.R", encoding = "UTF-8")
-source("./Funktionen/functions_storyfinder.R", encoding = "UTF-8")
-source("./Funktionen/functions_storybuilder.R", encoding = "UTF-8")
-source("./Funktionen/functions_output.R", encoding = "UTF-8")
-source("./tools/Funktionen/Utils.R", encoding = "UTF-8")
+#Load Libraries and Functions
+source("./Config/load_libraries_functions.R",encoding = "UTF-8")
 
-###Config: Bibliotheken laden, Pfade/Links definieren, bereits vorhandene Daten laden
-source("config.R",encoding = "UTF-8")
+###Set Constants###
+source("./Config/set_constants.R",encoding = "UTF-8")
+
+###Load texts and metadata###
+source("./Config/load_texts_metadata.R",encoding = "UTF-8")
+
+###Load JSON Data
+source("./Config/load_json_data.R",encoding = "UTF-8")
+
+Vorlagen_Titel <- as.data.frame(read_excel(paste0("Texte/Textbausteine_LENA_",abstimmung_date,".xlsx"), 
+                                           sheet = "Vorlagen_Uebersicht"))
 
 sprachen <- c("de","fr","it")
 

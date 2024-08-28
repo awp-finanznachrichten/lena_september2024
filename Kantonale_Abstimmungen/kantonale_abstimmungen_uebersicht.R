@@ -14,7 +14,8 @@ data_overview <- data.frame(50,50,"Abstimmung_de","Abstimmung_fr","Abstimmung_it
 colnames(data_overview) <- c("Ja","Nein","Abstimmung_de","Abstimmung_fr","Abstimmung_it")  
 vorlagen_kantonal <- kantone_list$vorlagen[[k]]
 
-check_counted <- c()
+check_counted <- c() 
+
 
 for (i in 1:nrow(vorlagen_kantonal)) {
 check_counted[i] <- FALSE
@@ -30,60 +31,60 @@ Ja_Stimmen_Kanton <- get_results_kantonal(json_data_kantone,
                                           i,
                                           "kantonal")
  
-#Titel aus Spreadsheet
-titel_all <- Vorlagen_Titel %>%
-  filter(Kanton == kantone_list$geoLevelname[k],
-         Vorlage_ID == vorlagen_kantonal$vorlagenId[i])
+#Titel aus Metadata
+titel_all <- votes_metadata %>%
+  filter(area_ID == kantone_list$geoLevelname[k],
+         votes_ID == vorlagen_kantonal$vorlagenId[i])
 
 #Eintrag für Uebersicht
-uebersicht_text_de <- paste0("<b>",titel_all$Vorlage_d[1],"</b><br>",
+uebersicht_text_de <- paste0("<b>",titel_all$title_de[1],"</b><br>",
                              "Es sind noch keine Gemeinden ausgezählt.")
 
-uebersicht_text_fr <- paste0("<b>",titel_all$Vorlage_f[1],"</b><br>",
+uebersicht_text_fr <- paste0("<b>",titel_all$title_fr[1],"</b><br>",
                              "Aucun résultat n'est encore connu.")
 
-uebersicht_text_it <- paste0("<b>",titel_all$Vorlage_i[1],"</b><br>",
+uebersicht_text_it <- paste0("<b>",titel_all$title_it[1],"</b><br>",
                              "Nessun risultato è ancora noto.")
 Ja_Anteil <- 50
 Nein_Anteil <- 50
 
 if (is.na(Ja_Stimmen_Kanton) == FALSE) {
-  uebersicht_text_de <- paste0("<b>",titel_all$Vorlage_d[1],"</b><br>",
+  uebersicht_text_de <- paste0("<b>",titel_all$title_de[1],"</b><br>",
                                "Die brieflichen Stimmen sind ausgezählt.")
   
-  uebersicht_text_fr <- paste0("<b>",titel_all$Vorlage_f[1],"</b><br>",
+  uebersicht_text_fr <- paste0("<b>",titel_all$title_fr[1],"</b><br>",
                                "Les votes par correspondance ont été dépouillés.")
   
-  uebersicht_text_it <- paste0("<b>",titel_all$Vorlage_i[1],"</b><br>",
+  uebersicht_text_it <- paste0("<b>",titel_all$title_it[1],"</b><br>",
                                "I voti per corrispondenza sono stati scrutinati.")
 if (sum(results$Gebiet_Ausgezaehlt) > 0 ) {  
   
-  uebersicht_text_de <- paste0("<b>",titel_all$Vorlage_d[1],"</b><br>",
+  uebersicht_text_de <- paste0("<b>",titel_all$title_de[1],"</b><br>",
                                sum(results$Gebiet_Ausgezaehlt)," von ",nrow(results)," Gemeinden ausgezählt (",
                                round((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
                                "%)")
   
-  uebersicht_text_fr <- paste0("<b>",titel_all$Vorlage_f[1],"</b><br>",
+  uebersicht_text_fr <- paste0("<b>",titel_all$title_fr[1],"</b><br>",
                                sum(results$Gebiet_Ausgezaehlt)," des ",nrow(results)," communes sont connus (",
                                round((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
                                "%)")
   
-  uebersicht_text_it <- paste0("<b>",titel_all$Vorlage_i[1],"</b><br>",
+  uebersicht_text_it <- paste0("<b>",titel_all$title_it[1],"</b><br>",
                                sum(results$Gebiet_Ausgezaehlt)," dei ",nrow(results)," comuni sono noti (",
                                round((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
                                "%)")
-  
+  titel_all$title_de[1]
   if (sum(results$Gebiet_Ausgezaehlt) == nrow(results)) {
-    uebersicht_text_de <- paste0("<b>",titel_all$Vorlage_d[1],"</b>")
+    uebersicht_text_de <- paste0("<b>",titel_all$title_de[1],"</b>")
     
-    uebersicht_text_fr <- paste0("<b>",titel_all$Vorlage_f[1],"</b>")
+    uebersicht_text_fr <- paste0("<b>",titel_all$title_fr[1],"</b>")
     
-    uebersicht_text_it <- paste0("<b>",titel_all$Vorlage_i[1],"</b>")
+    uebersicht_text_it <- paste0("<b>",titel_all$title_it[1],"</b>")
     
     cat(paste0("Resultate von folgender kantonalen Abstimmung aus ",kantone_list$geoLevelname[k]," sind komplett:\n",
-                 titel_all$Vorlage_d[1],"\n",
-                 titel_all$Vorlage_f[1],"\n",
-                 titel_all$Vorlage_i[1],"\n\n"))
+                 titel_all$title_de[1],"\n",
+                 titel_all$title_fr[1],"\n",
+                 titel_all$title_it[1],"\n\n"))
     check_counted[i] <- TRUE
   }  
 }

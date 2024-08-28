@@ -92,6 +92,7 @@ for (i in 1:length(vorlagen_short)) {
     #Historischer Vergleich (falls vorhanden)
 
     #Check Vorlagen-ID
+    if ()
     if (vorlagen$id[i] == "6720") { 
       hist_check <- TRUE 
       #data_hist <- format_data_hist(daten_bvg_bfs)

@@ -1,9 +1,8 @@
 mydb <- connectDB(db_name="sda_votes")
 rs <- dbSendQuery(mydb, paste0("SELECT * FROM votes_metadata WHERE date = '",voting_date,"' AND area_ID != 'CH' AND status = 'done'" ))
-votes_metadata <- DBI::fetch(rs,n=-1)
+votes_metadata_cantonal <- DBI::fetch(rs,n=-1)
 dbDisconnectAll()
-completed_votes <- na.omit(unique(votes_metadata$spreadsheet))
-
+completed_votes <- na.omit(unique(votes_metadata_cantonal$spreadsheet))
 
 for (s in 1:length(kantonal_short_special) ) {
 
@@ -98,9 +97,7 @@ for (s in 1:length(kantonal_short_special) ) {
   results <- results[results$Gebiet_Ausgezaehlt == TRUE &
                        results$Gebiet_Ausgezaehlt_Gegenvorschlag == TRUE &
                        results$Gebiet_Ausgezaehlt_Stichentscheid == TRUE,]
-  
-  
-View(results)
+
   #Sind schon Daten vorhanden?
   if (nrow(results) > 0) {
     
