@@ -66,12 +66,7 @@ for (k in 1:length(kantonal_short) ) {
 #Vergleich innerhalb des Kantons (falls Daten vom Kanton vorhanden)
     
     if (json_data_kantone$kantone$vorlagen[[kantonal_number[k]]]$vorlageBeendet[[kantonal_add[k]]] == TRUE) {
-      
-    if (kantonal_short[k] == "BS_Klimagerechtigkeit") {
-    cat("Kein kantonaler Vergleich\n\n")  
-    } else {  
     results <- kanton_storyfinder_kantonal(results)
-    }
     }
     
     #Textvorlagen laden

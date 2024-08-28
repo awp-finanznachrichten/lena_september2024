@@ -1,7 +1,7 @@
 library(RCurl)
 
 ###Set path with the charts
-setwd("C:/Users/simon/OneDrive/LENA_Project/20240609_LENA_Abstimmungen/Grafiken")
+setwd("C:/Users/simon/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen/Grafiken")
 
 ###Get Folders
 folders <- list.dirs(recursive = FALSE)

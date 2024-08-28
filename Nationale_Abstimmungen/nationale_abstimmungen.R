@@ -71,11 +71,11 @@ for (i in 1:length(vorlagen_short)) {
     }  
   
     #Special Vergleich mit anderer Abstimmung am selben Datum
-    if (vorlagen$id[i] == "6590" || vorlagen$id[i] == "6600") { 
+    if (votes_metadata_CH$remarks[i] == "other_comparison_first" || votes_metadata_CH$remarks[i] == "other_comparison_second") { 
     other_check <- TRUE
-    if (vorlagen$id[i] == "6590") {
+    if (votes_metadata_CH$remarks[i] == "other_comparison_first") {
       results_othervote <- get_results(json_data,i+1)
-    } else if (vorlagen$id[i] == "6600") {
+    } else if (votes_metadata_CH$remarks[i] == "other_comparison_second") {
       results_othervote <- get_results(json_data,i-1)
     }
     results_othervote <- results_othervote %>%
@@ -90,22 +90,19 @@ for (i in 1:length(vorlagen_short)) {
     
 
     #Historischer Vergleich (falls vorhanden)
-
-    #Check Vorlagen-ID
-    if ()
-    if (vorlagen$id[i] == "6720") { 
+    if (votes_metadata_CH$remarks[i] == "history_comparison") {
       hist_check <- TRUE 
-      #data_hist <- format_data_hist(daten_bvg_bfs)
       results <- merge(results,data_hist,all.x = TRUE)
-      if (other_check == FALSE) {
       results <- hist_storyfinder(results)
-      } else {
-      results <- hist_storyfinder_special(results)
-      }
     }
     
-    #Historischer Vergleich mit mehreren Vorlagen
-    if (vorlagen$id[i] == "6640") { 
+    if (votes_metadata_CH$remarks[i] == "history_comparison_special") {
+      hist_check <- TRUE 
+      results <- merge(results,data_hist,all.x = TRUE)
+      results <- hist_storyfinder_special(results)
+    }
+
+    if (votes_metadata_CH$remarks[i] == "history_comparison_several") {
       hist_check <- TRUE
       hist_several_check <- TRUE
       data_hist_1 <- format_data_hist(daten_covid1_bfs)
@@ -118,20 +115,16 @@ for (i in 1:length(vorlagen_short)) {
         rename(Hist2_Ja_Stimmen_In_Prozent = Hist_Ja_Stimmen_In_Prozent)
       results <- merge(results,data_hist_1,all.x = TRUE)
       results <- merge(results,data_hist_2,all.x = TRUE)
-
       results <- hist_storyfinder_several(results)
     }
 
     #Vergleich innerhalb des Kantons (falls alle Daten vom Kanton vorhanden)
-    
-    #Check Vorlagen-ID
-#    if (vorlagen$id[i] == "6620") {
-      
+    if (votes_metadata_CH$remarks[i] == "canton_comparison") {
       #Falls mindestens ein Kanton ausgezählt -> Stories für die Kantone finden
       if (length(unique(results_notavailable$Kantons_Nr)) < 26) {
         results <- kanton_storyfinder(results)
       }
-#    }
+    }
 
     ###Storybuilder
     
@@ -248,8 +241,6 @@ write.xlsx(texts,paste0("./Texte/",vorlagen_short[i],"_texte.xlsx"),row.names = 
   undertitel_fr <- "Aucun résultat n'est encore connu."
   undertitel_it <- "Nessun risultato è ancora noto."
 
-hold <- FALSE
-if (hold == FALSE) {
   if (nrow(results_notavailable) == 0) {
     undertitel_de <- paste0("Volk: <b>",
                             round(results_national$jaStimmenInProzent,1)," %</b> Ja, <b>",
@@ -321,7 +312,7 @@ if (hold == FALSE) {
     
     dw_edit_chart(datawrapper_codes_vorlage[6,5],intro=undertitel_it,annotate=paste0("Ultimo aggiornamento: ",format(Sys.time(),"%d.%m.%Y %H:%M")))
     dw_publish_chart(datawrapper_codes_vorlage[6,5])
-}  
+  
 
 #Eintrag für Uebersicht
 uebersicht_text_de <- paste0("<b>",vorlagen$text[i],"</b><br>",

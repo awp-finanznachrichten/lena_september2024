@@ -4,12 +4,21 @@ library(DatawRappr)
 library(zip)
 library(RCurl)
 
-#Working Directory definieren
-setwd("C:/Users/simon/OneDrive/LENA_Project/20240609_LENA_Abstimmungen")
+#Set Working Path
+MAIN_PATH <- "C:/Users/simon/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
+setwd(MAIN_PATH)
 
-###Config: Bibliotheken laden, Pfade/Links definieren, bereits vorhandene Daten laden
-source("config.R",encoding = "UTF-8")
-source("./Funktionen/functions_readin.R", encoding = "UTF-8")
+#Load Libraries and Functions
+source("./Config/load_libraries_functions.R",encoding = "UTF-8")
+
+###Set Constants###
+source("./Config/set_constants.R",encoding = "UTF-8")
+
+###Load texts and metadata###
+source("./Config/load_texts_metadata.R",encoding = "UTF-8")
+
+###Load JSON Data
+source("./Config/load_json_data.R",encoding = "UTF-8")
 
 #Vorlagen Codes
 vorlage_gemeinde <- c("kDkMR","5NIK3","Idw6B")
@@ -21,12 +30,12 @@ folder_fr <- "244619"
 folder_it <- "244619"
 
 #Datum
-datum_de <- "9. Juni 2024"
-datum_fr <- "9 juin 2024"
-datum_it <- "9 giugno 2024"
+datum_de <- "22. September 2024"
+datum_fr <- "22 septembre 2024"
+datum_it <- "22 settembre 2024"
 
 for (i in 1:length(vorlagen_short) ) {
-  
+
 #Nationale Ergebnisse holen
 results_national <- get_results(json_data,i,level="national")
 Ja_Anteil <- round(results_national$jaStimmenInProzent,1)
