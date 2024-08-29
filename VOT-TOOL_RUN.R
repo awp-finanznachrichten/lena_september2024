@@ -3,14 +3,18 @@ MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LEN
 #Working Directory definieren
 setwd(MAIN_PATH)
 
-###Funktionen laden
-source("./Funktionen/functions_readin.R", encoding = "UTF-8")
-source("./Funktionen/functions_github.R", encoding = "UTF-8")
-source("./tools/Funktionen/Utils.R", encoding = "UTF-8")
+#Load Libraries and Functions
+source("./Config/load_libraries_functions.R",encoding = "UTF-8")
+
+###Set Constants###
+source("./Config/set_constants.R",encoding = "UTF-8")
+
+###Load texts and metadata###
+source("./Config/load_texts_metadata.R",encoding = "UTF-8")
 
 repeat{
-###Config: Bibliotheken laden, Pfade/Links definieren, bereits vorhandene Daten laden
-source("config.R",encoding = "UTF-8")
+###Load JSON Data
+source("./Config/load_json_data.R",encoding = "UTF-8")
 
 #SRG Hochrechnungen
 source("./Vot-Tool/SRG_API_Request.R", encoding = "UTF-8")
@@ -31,13 +35,18 @@ rs <- dbSendQuery(mydb, paste0("SELECT * FROM output_overview WHERE date = '",vo
 output_overview <- DBI::fetch(rs,n=-1)
 dbDisconnectAll()
 
+###GET OUTPUT NEWS INTERMEDIATE###
+mydb <- connectDB(db_name="sda_votes")
+rs <- dbSendQuery(mydb, "SELECT * FROM output_news_intermediate WHERE news_intermediate = 'pending'")
+output_news_intermediate <- DBI::fetch(rs,n=-1)
+dbDisconnectAll()
+
 ###GET EXTRAPOLATIONS###
 mydb <- connectDB(db_name="sda_votes")
 rs <- dbSendQuery(mydb, paste0("SELECT * FROM extrapolations"))
 extrapolations <- DBI::fetch(rs,n=-1)
 dbDisconnectAll()
 
-  
   for (i in 1:nrow(output_overview)) {
     canton_results <- cantons_results %>%
       filter(area_ID == output_overview$area_ID[i]) 
@@ -60,6 +69,14 @@ dbDisconnectAll()
     }
   }  
   
+
+#Zwischenstand?
+if (Sys.time() > output_news_intermediate$timestamp[1]) {
+  print("Generiere Zwischenstands-Meldungen...")
+  source("./Vot-Tool/create_news_intermediate.R", encoding="UTF-8") 
+}
+
+
 #Abstimmung komplett?
 mydb <- connectDB(db_name="sda_votes")
 rs <- dbSendQuery(mydb, paste0("SELECT * FROM output_overview WHERE date = '",voting_date,"' AND area_ID = 'CH'"))

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<newsMessage xmlns="http://iptc.org/std/nar/2006-10-01/">
+  <header>
+    <sent>2024-08-29T14:35:01+02:00</sent>
+  </header>
+
+  <itemSet>
+    <newsItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://iptc.org/std/nar/2006-10-01/" standard="NewsML-G2" standardversion="2.28" conformance="power" xml:lang="de" guid="urn:newsml:keystone-sda.ch:20240829:20240829143501789942924933082" version="1">
+      <catalogRef href="http://www.iptc.org/std/catalog/catalog.IPTC-G2-Standards_34.xml"/>
+      <catalogRef href="http://www.keystone-sda.ch/NewsML_G2/SDA-G2-Catalog.xml"/>
+
+      <itemMeta>
+        <itemClass qcode="ninat:text"/>
+        <provider qcode="nprov:KSDA">
+           <name>sda</name>
+        </provider>
+        <versionCreated>2024-08-29T14:35:01+02:00</versionCreated>
+        <pubStatus qcode="stat:withheld"/>
+        <generator versioninfo="0.3.4">XML::NewsML_G2</generator>
+        <service qcode="sdasvc:bsd"></service>
+        <edNote role="sdanote:note">DIES IST EIN TEST</edNote>
+        <edNote role="sdalena:memo">DIES IST EIN TEST</edNote>
+        
+      </itemMeta>
+
+      <contentMeta>
+        <urgency>2</urgency>
+        <contentCreated>2024-08-29T14:35:01+02:00</contentCreated>
+        <creator>
+          <name>sda-robot</name>
+        </creator>
+        <altId>789942924933082</altId>
+        <dateline>Bern</dateline>
+        <language tag="de"/>
+        <genre qcode="sdagenre:RES">
+        </genre>
+
+        <!--storytypes-->
+        <subject type="cpnat:abstract" qcode="sdastorytype:tble"></subject>
+        
+        <!--media topics-->
+        <subject type="cpnat:abstract" qcode="sdamarschannel:POL"></subject>
+<subject type="cpnat:abstract" qcode="sdamarschannel:VOT"></subject>
+
+        <!--locations-->
+        <located type="loctype:city" qcode="sdamarsgeo:BRN">
+<name>Bern</name>
+</located>
+  
+        <slugline>vot Tabelle</slugline>
+        <headline>Biodiversitätsinitiative: Zwischenstand</headline>
+        <description role="drol:teaser"> </description>
+        <description role="drol:catchline"></description>
+      </contentMeta>
+
+      <contentSet>
+        <inlineXML contenttype="application/xhtml+xml">
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+              <title>Biodiversitätsinitiative: Zwischenstand</title>
+            </head>
+            <body>
+              <p class="lead"> </p>
+              <p class="paragraph">Biodiversitätsinitiative</p>
+<table><tbody>
+<tr><td>Kanton</td><td>Ja</td><td>%</td><td>Nein</td><td>%</td><td>Bet. %</td></tr>
+<tr><td>Aargau</td><td>64638</td><td>34,11</td><td>124876</td><td>65,89</td><td>43,03</td></tr>
+<tr><td>Appenzell Innerrhoden</td><td>990</td><td>20,04</td><td>3951</td><td>79,96</td><td>40,87</td></tr>
+<tr><td>Appenzell Ausserrhoden</td><td>5817</td><td>30,41</td><td>13311</td><td>69,59</td><td>49,29</td></tr>
+<tr><td>Bern</td><td>155228</td><td>46,72</td><td>177029</td><td>53,28</td><td>44,95</td></tr>
+<tr><td>Basel-Landschaft</td><td>38117</td><td>43,48</td><td>49544</td><td>56,52</td><td>46,97</td></tr>
+<tr><td>Basel-Stadt</td><td>30331</td><td>54,25</td><td>25580</td><td>45,75</td><td>49,60</td></tr>
+<tr><td>Freiburg</td><td>51149</td><td>55,03</td><td>41800</td><td>44,97</td><td>43,65</td></tr>
+<tr><td>Genf</td><td>77423</td><td>61,69</td><td>48084</td><td>38,31</td><td>46,08</td></tr>
+<tr><td>Glarus</td><td>4024</td><td>36,01</td><td>7150</td><td>63,99</td><td>42,23</td></tr>
+<tr><td>Graubünden</td><td>20327</td><td>34,42</td><td>38728</td><td>65,58</td><td>42,47</td></tr>
+<tr><td>Jura</td><td>16529</td><td>71,97</td><td>6436</td><td>28,03</td><td>42,62</td></tr>
+<tr><td>Luzern</td><td>42555</td><td>33,26</td><td>85402</td><td>66,74</td><td>45,28</td></tr>
+<tr><td>Neuenburg</td><td>34089</td><td>69,49</td><td>14964</td><td>30,51</td><td>43,47</td></tr>
+<tr><td>Nidwalden</td><td>3899</td><td>25,89</td><td>11159</td><td>74,11</td><td>47,71</td></tr>
+<tr><td>Obwalden</td><td>3103</td><td>23,68</td><td>10003</td><td>76,32</td><td>48,27</td></tr>
+<tr><td>St. Gallen</td><td>47439</td><td>33,83</td><td>92785</td><td>66,17</td><td>42,54</td></tr>
+<tr><td>Schaffhausen</td><td>14606</td><td>43,71</td><td>18806</td><td>56,29</td><td>65,58</td></tr>
+<tr><td>Solothurn</td><td>34127</td><td>42,94</td><td>45342</td><td>57,06</td><td>43,68</td></tr>
+<tr><td>Schwyz</td><td>14470</td><td>27,75</td><td>37680</td><td>72,25</td><td>48,48</td></tr>
+<tr><td>Thurgau</td><td>25519</td><td>33,70</td><td>50195</td><td>66,30</td><td>43,02</td></tr>
+<tr><td>Tessin</td><td>63060</td><td>57,54</td><td>46540</td><td>42,46</td><td>49,69</td></tr>
+<tr><td>Uri</td><td>2730</td><td>30,06</td><td>6352</td><td>69,94</td><td>34,04</td></tr>
+<tr><td>Waadt</td><td>128093</td><td>60,55</td><td>83469</td><td>39,45</td><td>44,73</td></tr>
+<tr><td>Wallis</td><td>52667</td><td>52,31</td><td>48018</td><td>47,69</td><td>44,03</td></tr>
+<tr><td>Zug</td><td>11320</td><td>27,57</td><td>29745</td><td>72,43</td><td>52,27</td></tr>
+<tr><td>Zürich</td><td>174660</td><td>38,89</td><td>274464</td><td>61,11</td><td>46,73</td></tr>
+</tbody></table>
+<table><tbody>
+<tr><td>Stände: 7,5 Ja, 15,5 Nein (am Ständemehr gescheitert)</td></tr>
+<tr><td>Ja-Kantone: BS, FR, GE, JU, NE, TI, VD, VS</td></tr>
+<tr><td>Nein-Kantone: AG, AI, AR, BE, BL, GL, GR, LU, NW, OW, SG, SH, SO, SZ, TG, UR, ZG, ZH</td></tr>
+<tr><td>SRG-Hochrechnung um 13:00 Uhr: 44 Prozent Ja, 56 Prozent Nein</td></tr>
+</tbody></table>
+
+            </body>
+          </html>
+        </inlineXML>
+      </contentSet>
+    </newsItem>
+  </itemSet>
+</newsMessage>

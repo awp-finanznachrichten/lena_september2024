@@ -12,6 +12,7 @@ Subject <- paste0("***TEST***Kanton ",canton_results$area_ID[1],": Abstimmungser
 Body <- paste0("Liebes Keystone-SDA-Team,\n\n",
                "Die Ergebnisse zu den eidgenössischen Abstimmungen vom Kanton ",canton_results$area_ID[1]," sind komplett.\n\n",
                text_results,
+               "Ihr findet die Meldungen im Mars im Input-Ordner Lena.\n\n",
                "Liebe Grüsse\n\nLENA")
 send_notification(Subject,
                   Body,

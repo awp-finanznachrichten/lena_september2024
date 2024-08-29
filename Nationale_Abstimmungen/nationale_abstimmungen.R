@@ -228,7 +228,7 @@ write.xlsx(texts,paste0("./Texte/",vorlagen_short[i],"_texte.xlsx"),row.names = 
   print(paste0("Stände JA: ",results_national$jaStaendeGanz+(results_national$jaStaendeHalb/2)))
   print(paste0("Stände NEIN: ",results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2)))
   
-  source("outputs_einzugsgebiete.R", encoding = "UTF-8")
+  #source("outputs_einzugsgebiete.R", encoding = "UTF-8")
   
   #Output Abstimmungen Kantone
   output_dw_kantone <- get_output_kantone(results)
