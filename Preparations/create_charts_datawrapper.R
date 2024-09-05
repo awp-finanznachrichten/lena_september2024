@@ -290,7 +290,7 @@ for (k in 1:length(kantonal_short_special)) {
     metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
     
     new_entry <- data.frame("Kantonale Vorlage Overview",
-                            kantonal_short[k],
+                            kantonal_short_special[k],
                             metadata_chart$content$title,
                             metadata_chart$content$language,
                             metadata_chart$id,
@@ -318,7 +318,7 @@ for (k in 1:length(kantonal_short_special)) {
     metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
     
     new_entry <- data.frame("Kantonale Vorlage Overview",
-                            kantonal_short[k],
+                            kantonal_short_special[k],
                             metadata_chart$content$title,
                             metadata_chart$content$language,
                             metadata_chart$id,
@@ -346,7 +346,7 @@ for (k in 1:length(kantonal_short_special)) {
     metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
     
     new_entry <- data.frame("Kantonale Vorlage Overview",
-                            kantonal_short[k],
+                            kantonal_short_special[k],
                             metadata_chart$content$title,
                             metadata_chart$content$language,
                             metadata_chart$id,
@@ -382,7 +382,7 @@ for (k in 1:length(kantonal_short_special)) {
     metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
     
     new_entry <- data.frame("Kantonale Vorlage Initiative",
-                            kantonal_short[k],
+                            kantonal_short_special[k],
                             metadata_chart$content$title,
                             metadata_chart$content$language,
                             metadata_chart$id,
@@ -410,7 +410,7 @@ for (k in 1:length(kantonal_short_special)) {
     metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
     
     new_entry <- data.frame("Kantonale Vorlage Initiative",
-                            kantonal_short[k],
+                            kantonal_short_special[k],
                             metadata_chart$content$title,
                             metadata_chart$content$language,
                             metadata_chart$id,
@@ -438,7 +438,7 @@ for (k in 1:length(kantonal_short_special)) {
     metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
     
     new_entry <- data.frame("Kantonale Vorlage Initiative",
-                            kantonal_short[k],
+                            kantonal_short_special[k],
                             metadata_chart$content$title,
                             metadata_chart$content$language,
                             metadata_chart$id,
@@ -472,7 +472,7 @@ for (k in 1:length(kantonal_short_special)) {
     metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
     
     new_entry <- data.frame("Kantonale Vorlage Gegenvorschlag",
-                            kantonal_short[k],
+                            kantonal_short_special[k],
                             metadata_chart$content$title,
                             metadata_chart$content$language,
                             metadata_chart$id,
@@ -500,7 +500,7 @@ for (k in 1:length(kantonal_short_special)) {
     metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
     
     new_entry <- data.frame("Kantonale Vorlage Gegenvorschlag",
-                            kantonal_short[k],
+                            kantonal_short_special[k],
                             metadata_chart$content$title,
                             metadata_chart$content$language,
                             metadata_chart$id,
@@ -528,7 +528,7 @@ for (k in 1:length(kantonal_short_special)) {
     metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
     
     new_entry <- data.frame("Kantonale Vorlage Gegenvorschlag",
-                            kantonal_short[k],
+                            kantonal_short_special[k],
                             metadata_chart$content$title,
                             metadata_chart$content$language,
                             metadata_chart$id,
@@ -562,7 +562,7 @@ for (k in 1:length(kantonal_short_special)) {
     metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
     
     new_entry <- data.frame("Kantonale Vorlage Stichentscheid",
-                            kantonal_short[k],
+                            kantonal_short_special[k],
                             metadata_chart$content$title,
                             metadata_chart$content$language,
                             metadata_chart$id,
@@ -590,7 +590,7 @@ for (k in 1:length(kantonal_short_special)) {
     metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
     
     new_entry <- data.frame("Kantonale Vorlage Stichentscheid",
-                            kantonal_short[k],
+                            kantonal_short_special[k],
                             metadata_chart$content$title,
                             metadata_chart$content$language,
                             metadata_chart$id,
@@ -618,7 +618,7 @@ for (k in 1:length(kantonal_short_special)) {
     metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
     
     new_entry <- data.frame("Kantonale Vorlage Stichentscheid",
-                            kantonal_short[k],
+                            kantonal_short_special[k],
                             metadata_chart$content$title,
                             metadata_chart$content$language,
                             metadata_chart$id,

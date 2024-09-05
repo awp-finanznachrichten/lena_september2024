@@ -98,7 +98,7 @@ for (k in 1:length(kantonal_short) ) {
   }
 
 #Texte speichern
-  if (save_texts == TRUE) 
+  if (save_texts == TRUE) {
   texts <- results %>%
     select(Gemeinde_KT_d,
            Storyboard,
@@ -107,7 +107,7 @@ for (k in 1:length(kantonal_short) ) {
            Text_i)
 library(xlsx)
 write.xlsx(texts,paste0("./Texte/",kantonal_short[k],"_texte.xlsx"))
-  
+  }  
   ###Output generieren für Datawrapper
   #Output Abstimmungen Gemeinde
   output_dw_de <- get_output_gemeinden(results,language = "de")
@@ -179,7 +179,7 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short[k],"_texte.xlsx"))
     }
     
     datawrapper_codes_vorlage <- datawrapper_codes_kantonal[datawrapper_codes_kantonal$Vorlage == kantonal_short[k],]
-    
+
     #Karten Gemeinden
     for (r in 1:nrow(datawrapper_codes_vorlage)) {
       if (datawrapper_codes_vorlage$Sprache[r] == "de-DE") {
