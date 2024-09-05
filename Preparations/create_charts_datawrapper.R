@@ -1,5 +1,5 @@
 #Set Working Path
-MAIN_PATH <- "C:/Users/simon/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
+MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
 setwd(MAIN_PATH)
 
 #Load Libraries and Functions
@@ -38,6 +38,7 @@ monate_it <- c("gennaio","febbraio","marzo",
 vorlagen_uebersicht <- c("O1i9P","Ocame","ot8Mm")
 vorlagen_gemeinden <- c("EuC56","JJ03i","CPwql")
 vorlagen_kantone <- c("HH2Hs","G7A2k","sobvY")
+vorlagen_kantone_special_overview <- c("8QihT","SZmQU","7wXV4")
 vorlagen_kantone_special_initiative <- c("xftvb","LS2ff","FAOHL")
 vorlagen_kantone_special_gegenvorschlag <- c("NNXj8","FsoiR","qiUTe")
 vorlagen_kantone_special_stichentscheid <- c("UfpM1","cDy1R","ygRKA")
@@ -65,6 +66,17 @@ folder_gemeindeebene <- dw_create_folder("Gemeindeebene",parent_id = folder_schw
 folder_kantonsebene <- dw_create_folder("Kantonsebene",parent_id = folder_schweiz$id)
 
 folder_kantone_uebersicht <- dw_create_folder("_Übersicht",parent_id = folder_kantonal$id)
+
+#Save folders
+all_folders <- c(main_folder,folder_eid,folder_kantonal,folder_infografiken,
+                 folder_uebersicht,folder_einzugsgebiete,folder_kantone,folder_schweiz,
+                 folder_gemeindeebene,
+                 folder_kantonsebene,
+                 folder_kantone_uebersicht)
+
+#saveRDS(all_folders,file="./Preparations/all_folders.RDS")
+#all_folders <- readRDS("./Preparations/all_folders.RDS")
+
 
 
 ###Grafiken erstellen und Daten speichern
@@ -169,7 +181,7 @@ for (k in 1:length(kantonal_short)) {
 if (is.na(Vorlagen_Info$Vorlage_d) == FALSE) {
   data_chart <- dw_copy_chart(vorlagen_gemeinden[1])
   created_folder <- dw_create_folder(paste0(kantonal_short[k],"_DE"),parent_id = folder_kantonal$id) #"166825"
-  
+
   dw_edit_chart(data_chart$id,
                 title=Vorlagen_Info$Vorlage_d,
                 intro = "&nbsp;",
@@ -255,6 +267,98 @@ if (is.na(Vorlagen_Info$Vorlage_i) == FALSE) {
 #Kantonale Abstimmungen Special
 for (k in 1:length(kantonal_short_special)) {
   
+  #Übersicht
+  vorlage_id <- json_data_kantone[["kantone"]][["vorlagen"]][[kantonal_number_special[k]]][["vorlagenId"]][kantonal_add_special[k]]
+  Vorlagen_Info <- Vorlagen_Titel %>%
+    filter(Vorlage_ID == vorlage_id)
+  
+  if (is.na(Vorlagen_Info$Vorlage_d) == FALSE) {
+    data_chart <- dw_copy_chart(vorlagen_kantone_special_overview[1])
+    created_folder <- dw_create_folder(paste0(kantonal_short_special[k],"_Overview_DE"),parent_id = folder_kantonal$id) #"166825"
+    
+    dw_edit_chart(data_chart$id,
+                  title=Vorlagen_Info$Vorlage_d,
+                  intro = "&nbsp;",
+                  annotate = "&nbsp;",
+                  folderId = created_folder$id,
+                  data=list("external-data"=paste0("https://raw.githubusercontent.com/awp-finanznachrichten/lena_",
+                                                   gsub("ä","ae",tolower(monate_de[month(date_voting)])),year(date_voting),
+                                                   "/master/Output_Cantons/",kantonal_short[k],"_dw_",sprachen[1],"_overview.csv")),
+                  visualize=list("mapView" = "crop"))
+    
+    dw_publish_chart(data_chart$id)
+    metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
+    
+    new_entry <- data.frame("Kantonale Vorlage Overview",
+                            kantonal_short[k],
+                            metadata_chart$content$title,
+                            metadata_chart$content$language,
+                            metadata_chart$id,
+                            metadata_chart$content$publicUrl,
+                            metadata_chart$content$metadata$publish$`embed-codes`$`embed-method-responsive`,
+                            metadata_chart$content$metadata$publish$`embed-codes`$`embed-method-web-component`)
+    colnames(new_entry) <- c("Typ","Vorlage","Titel","Sprache","ID","Link","Iframe","Script")
+    grafiken_uebersicht <- rbind(grafiken_uebersicht,new_entry)
+  }
+  if (is.na(Vorlagen_Info$Vorlage_f) == FALSE) {
+    data_chart <- dw_copy_chart(vorlagen_kantone_special_overview[2])
+    created_folder <- dw_create_folder(paste0(kantonal_short_special[k],"_Overview_FR"),parent_id = folder_kantonal$id) #"166825"
+    
+    dw_edit_chart(data_chart$id,
+                  title=Vorlagen_Info$Vorlage_f,
+                  intro = "&nbsp;",
+                  annotate = "&nbsp;",
+                  folderId = created_folder$id,
+                  data=list("external-data"=paste0("https://raw.githubusercontent.com/awp-finanznachrichten/lena_",
+                                                   gsub("ä","ae",tolower(monate_de[month(date_voting)])),year(date_voting),
+                                                   "/master/Output_Cantons/",kantonal_short[k],"_dw_",sprachen[2],"_overview.csv")),
+                  visualize=list("mapView" = "crop"))
+    
+    dw_publish_chart(data_chart$id)
+    metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
+    
+    new_entry <- data.frame("Kantonale Vorlage Overview",
+                            kantonal_short[k],
+                            metadata_chart$content$title,
+                            metadata_chart$content$language,
+                            metadata_chart$id,
+                            metadata_chart$content$publicUrl,
+                            metadata_chart$content$metadata$publish$`embed-codes`$`embed-method-responsive`,
+                            metadata_chart$content$metadata$publish$`embed-codes`$`embed-method-web-component`)
+    colnames(new_entry) <- c("Typ","Vorlage","Titel","Sprache","ID","Link","Iframe","Script")
+    grafiken_uebersicht <- rbind(grafiken_uebersicht,new_entry)
+  }
+  if (is.na(Vorlagen_Info$Vorlage_i) == FALSE) {
+    data_chart <- dw_copy_chart(vorlagen_kantone_special_initiative[3])
+    created_folder <- dw_create_folder(paste0(kantonal_short_special[k],"_Overview_IT"),parent_id = folder_kantonal$id) #"166825"
+    
+    dw_edit_chart(data_chart$id,
+                  title=Vorlagen_Info$Vorlage_i,
+                  intro = "&nbsp;",
+                  annotate = "&nbsp;",
+                  folderId = created_folder$id,
+                  data=list("external-data"=paste0("https://raw.githubusercontent.com/awp-finanznachrichten/lena_",
+                                                   gsub("ä","ae",tolower(monate_de[month(date_voting)])),year(date_voting),
+                                                   "/master/Output_Cantons/",kantonal_short[k],"_dw_",sprachen[3],"_overview.csv")),
+                  visualize=list("mapView" = "crop"))
+    
+    dw_publish_chart(data_chart$id)
+    metadata_chart <- dw_retrieve_chart_metadata(data_chart$id)
+    
+    new_entry <- data.frame("Kantonale Vorlage Overview",
+                            kantonal_short[k],
+                            metadata_chart$content$title,
+                            metadata_chart$content$language,
+                            metadata_chart$id,
+                            metadata_chart$content$publicUrl,
+                            metadata_chart$content$metadata$publish$`embed-codes`$`embed-method-responsive`,
+                            metadata_chart$content$metadata$publish$`embed-codes`$`embed-method-web-component`)
+    colnames(new_entry) <- c("Typ","Vorlage","Titel","Sprache","ID","Link","Iframe","Script")
+    grafiken_uebersicht <- rbind(grafiken_uebersicht,new_entry)
+  }
+  
+  
+  
   #Initiative
   vorlage_id <- json_data_kantone[["kantone"]][["vorlagen"]][[kantonal_number_special[k]]][["vorlagenId"]][kantonal_add_special[k]]
   Vorlagen_Info <- Vorlagen_Titel %>%
@@ -262,7 +366,7 @@ for (k in 1:length(kantonal_short_special)) {
 
   if (is.na(Vorlagen_Info$Vorlage_d) == FALSE) {
     data_chart <- dw_copy_chart(vorlagen_kantone_special_initiative[1])
-    created_folder <- dw_create_folder(paste0(kantonal_short[k],"_Initiative_DE"),parent_id = folder_kantonal$id) #"166825"
+    created_folder <- dw_create_folder(paste0(kantonal_short_special[k],"_Initiative_DE"),parent_id = folder_kantonal$id) #"166825"
 
     dw_edit_chart(data_chart$id,
                   title=Vorlagen_Info$Vorlage_d,
@@ -290,7 +394,7 @@ for (k in 1:length(kantonal_short_special)) {
   }
   if (is.na(Vorlagen_Info$Vorlage_f) == FALSE) {
     data_chart <- dw_copy_chart(vorlagen_kantone_special_initiative[2])
-    created_folder <- dw_create_folder(paste0(kantonal_short[k],"_Initiative_FR"),parent_id = folder_kantonal$id) #"166825"
+    created_folder <- dw_create_folder(paste0(kantonal_short_special[k],"_Initiative_FR"),parent_id = folder_kantonal$id) #"166825"
     
     dw_edit_chart(data_chart$id,
                   title=Vorlagen_Info$Vorlage_f,
@@ -318,7 +422,7 @@ for (k in 1:length(kantonal_short_special)) {
   }
   if (is.na(Vorlagen_Info$Vorlage_i) == FALSE) {
     data_chart <- dw_copy_chart(vorlagen_kantone_special_initiative[3])
-    created_folder <- dw_create_folder(paste0(kantonal_short[k],"_Initiative_IT"),parent_id = folder_kantonal$id) #"166825"
+    created_folder <- dw_create_folder(paste0(kantonal_short_special[k],"_Initiative_IT"),parent_id = folder_kantonal$id) #"166825"
     
     dw_edit_chart(data_chart$id,
                   title=Vorlagen_Info$Vorlage_i,
@@ -352,7 +456,7 @@ for (k in 1:length(kantonal_short_special)) {
 
   if (is.na(Vorlagen_Info$Vorlage_d) == FALSE) {
     data_chart <- dw_copy_chart(vorlagen_kantone_special_gegenvorschlag[1])
-    created_folder <- dw_create_folder(paste0(kantonal_short[k],"_Gegenvorschlag_DE"),parent_id = folder_kantonal$id) #"166825"
+    created_folder <- dw_create_folder(paste0(kantonal_short_special[k],"_Gegenvorschlag_DE"),parent_id = folder_kantonal$id) #"166825"
     
     dw_edit_chart(data_chart$id,
                   title=Vorlagen_Info$Vorlage_d,
@@ -380,7 +484,7 @@ for (k in 1:length(kantonal_short_special)) {
   }
   if (is.na(Vorlagen_Info$Vorlage_f) == FALSE) {
     data_chart <- dw_copy_chart(vorlagen_kantone_special_gegenvorschlag[2])
-    created_folder <- dw_create_folder(paste0(kantonal_short[k],"_Gegenvorschlag_FR"),parent_id = folder_kantonal$id) #"166825"
+    created_folder <- dw_create_folder(paste0(kantonal_short_special[k],"_Gegenvorschlag_FR"),parent_id = folder_kantonal$id) #"166825"
     
     dw_edit_chart(data_chart$id,
                   title=Vorlagen_Info$Vorlage_f,
@@ -408,7 +512,7 @@ for (k in 1:length(kantonal_short_special)) {
   }
   if (is.na(Vorlagen_Info$Vorlage_i) == FALSE) {
     data_chart <- dw_copy_chart(vorlagen_kantone_special_gegenvorschlag[3])
-    created_folder <- dw_create_folder(paste0(kantonal_short[k],"_Gegenvorschlag_IT"),parent_id = folder_kantonal$id) #"166825"
+    created_folder <- dw_create_folder(paste0(kantonal_short_special[k],"_Gegenvorschlag_IT"),parent_id = folder_kantonal$id) #"166825"
     
     dw_edit_chart(data_chart$id,
                   title=Vorlagen_Info$Vorlage_i,
@@ -442,7 +546,7 @@ for (k in 1:length(kantonal_short_special)) {
   
   if (is.na(Vorlagen_Info$Vorlage_d) == FALSE) {
     data_chart <- dw_copy_chart(vorlagen_kantone_special_stichentscheid[1])
-    created_folder <- dw_create_folder(paste0(kantonal_short[k],"_Stichentscheid_DE"),parent_id = folder_kantonal$id) #"166825"
+    created_folder <- dw_create_folder(paste0(kantonal_short_special[k],"_Stichentscheid_DE"),parent_id = folder_kantonal$id) #"166825"
     
     dw_edit_chart(data_chart$id,
                   title=Vorlagen_Info$Vorlage_d,
@@ -470,7 +574,7 @@ for (k in 1:length(kantonal_short_special)) {
   }
   if (is.na(Vorlagen_Info$Vorlage_f) == FALSE) {
     data_chart <- dw_copy_chart(vorlagen_kantone_special_stichentscheid[2])
-    created_folder <- dw_create_folder(paste0(kantonal_short[k],"_Stichentscheid_FR"),parent_id = folder_kantonal$id) #"166825"
+    created_folder <- dw_create_folder(paste0(kantonal_short_special[k],"_Stichentscheid_FR"),parent_id = folder_kantonal$id) #"166825"
     
     dw_edit_chart(data_chart$id,
                   title=Vorlagen_Info$Vorlage_f,
@@ -498,7 +602,7 @@ for (k in 1:length(kantonal_short_special)) {
   }
   if (is.na(Vorlagen_Info$Vorlage_i) == FALSE) {
     data_chart <- dw_copy_chart(vorlagen_kantone_special_stichentscheid[3])
-    created_folder <- dw_create_folder(paste0(kantonal_short[k],"_Stichentscheid_IT"),parent_id = folder_kantonal$id) #"166825"
+    created_folder <- dw_create_folder(paste0(kantonal_short_special[k],"_Stichentscheid_IT"),parent_id = folder_kantonal$id) #"166825"
     
     dw_edit_chart(data_chart$id,
                   title=Vorlagen_Info$Vorlage_i,

@@ -44,7 +44,7 @@ if (time_check_national == FALSE) {
   source("./Nationale_Abstimmungen/nationale_abstimmungen.R", encoding="UTF-8")
   
   #Make Commit
-  source("commit.R", encoding="UTF-8")
+  source("./Config/commit.R", encoding="UTF-8")
   
   #Tabellen aktualisieren
   #source("votations_juin_2024/top_flop/top_flop_run.R", encoding="UTF-8")
