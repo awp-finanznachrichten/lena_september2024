@@ -13,7 +13,7 @@ DEFAULT_MAILS <- "robot-notification@awp.ch"
 
 #JSON Feeds
 FEED_NATIONAL <- "https://app-prod-static-voteinfo.s3.eu-central-1.amazonaws.com/v1/ogd/sd-t-17-02-20240922-eidgAbstimmung.json"
-FEED_CANTONAL <- "https://app-prod-static-voteinfo.s3.eu-central-1.amazonaws.com/v1/ogd/sd-t-17-02-20240609-kantAbstimmung.json"
+FEED_CANTONAL <- "https://app-prod-static-voteinfo.s3.eu-central-1.amazonaws.com/v1/ogd/sd-t-17-02-20240922-kantAbstimmung.json"
 
 #Spezialfälle?
 other_check <- FALSE

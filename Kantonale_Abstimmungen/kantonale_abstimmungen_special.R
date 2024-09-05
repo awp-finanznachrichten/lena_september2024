@@ -147,6 +147,49 @@ library(xlsx)
 write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
 }
   ###Output generieren für Datawrapper
+  
+  ###OUTPUT OVERVIEW
+  output_dw_de_overview <- get_output_gemeinden(results,language = "de")
+  output_dw_fr_overview <- get_output_gemeinden(results,language = "fr")
+  output_dw_it_overview <- get_output_gemeinden(results,language = "it")
+  
+
+  for (z in 1:nrow(results)) {
+    
+  if (grepl("Intro_HauptvorlageJa_GegenvorschlagJa_StichentscheidHauptvorlage|Intro_HauptvorlageJa_GegenvorschlagNein",results$Storyboard[z]) == TRUE) {
+  output_dw_de_overview$Gemeinde_color[z] <- "Initiative"
+  output_dw_fr_overview$Gemeinde_color[z] <- "Initiative"
+  output_dw_it_overview$Gemeinde_color[z] <- "Initiative"
+  }  
+    
+  if (grepl("Intro_HauptvorlageJa_GegenvorschlagJa_StichentscheidGegenvorschlag|Intro_HauptvorlageNein_GegenvorschlagJa",results$Storyboard[z]) == TRUE) {
+      output_dw_de_overview$Gemeinde_color[z] <- "Gegenvorschlag"
+      output_dw_fr_overview$Gemeinde_color[z] <- "Gegenvorschlag"
+      output_dw_it_overview$Gemeinde_color[z] <- "Gegenvorschlag"
+  }  
+    
+    
+  if (grepl("Intro_HauptvorlageNein_GegenvorschlagNein",results$Storyboard[z]) == TRUE) {
+      output_dw_de_overview$Gemeinde_color[z] <- "Zweimal Nein"
+      output_dw_fr_overview$Gemeinde_color[z] <- "Zweimal Nein"
+      output_dw_it_overview$Gemeinde_color[z] <- "Zweimal Nein"
+  }  
+    
+    if (is.na(results$Storyboard[z]) == TRUE) {
+      output_dw_de_overview$Gemeinde_color[z] <- "Not Counted"
+      output_dw_fr_overview$Gemeinde_color[z] <- "Not Counted"
+      output_dw_it_overview$Gemeinde_color[z] <- "Not Counted"
+    }  
+      
+  }  
+    
+  write.csv(output_dw_de_overview,paste0("Output_Cantons/",kantonal_short_special[s],"_dw_de_overview.csv"), na = "", row.names = FALSE, fileEncoding = "UTF-8")
+  write.csv(output_dw_fr_overview,paste0("Output_Cantons/",kantonal_short_special[s],"_dw_fr_overview.csv"), na = "", row.names = FALSE, fileEncoding = "UTF-8")
+  write.csv(output_dw_it_overview,paste0("Output_Cantons/",kantonal_short_special[s],"_dw_it_overview.csv"), na = "", row.names = FALSE, fileEncoding = "UTF-8")
+  
+  
+
+    
 
   ###OUTPUT INITIATIVE
   #Output Abstimmungen Gemeinde
@@ -188,6 +231,8 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
   write.csv(output_dw_de_stichentscheid,paste0("Output_Cantons/",kantonal_short_special[s],"_dw_de_stichentscheid.csv"), na = "", row.names = FALSE, fileEncoding = "UTF-8")
   write.csv(output_dw_fr_stichentscheid,paste0("Output_Cantons/",kantonal_short_special[s],"_dw_fr_stichentscheid.csv"), na = "", row.names = FALSE, fileEncoding = "UTF-8")
   write.csv(output_dw_it_stichentscheid,paste0("Output_Cantons/",kantonal_short_special[s],"_dw_it_stichentscheid.csv"), na = "", row.names = FALSE, fileEncoding = "UTF-8")
+  
+
   
   cat(paste0("\nGenerated output for Vorlage ",kantonal_short_special[s],"\n"))
   
@@ -325,7 +370,7 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
         dw_publish_chart(datawrapper_codes_vorlage_initiative[r,5])
       } else {
         dw_edit_chart(datawrapper_codes_vorlage_initiative[r,5],
-                      intro=intro=paste0(undertitel_initiative_fr,'<br>
+                      intro=paste0(undertitel_initiative_fr,'<br>
 <span style="line-height:30px">
   <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;initiative&nbsp;&nbsp;</a> &nbsp;
                                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> contre-proposition</a> &nbsp;

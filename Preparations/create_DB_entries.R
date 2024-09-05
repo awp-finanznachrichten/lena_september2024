@@ -39,3 +39,20 @@ for (i in 1:nrow(vorlagen)) {
   rs <- dbSendQuery(mydb, sql_qry)
   }
 }  
+
+#Enter Metadata from Spreadsheet
+metadata <- as.data.frame(read_excel(paste0("Texte/Textbausteine_LENA_",abstimmung_date,".xlsx"), 
+                                          sheet = "Vorlagen_Uebersicht"))
+
+metadata$Vorlage_d <- str_replace_all(metadata$Vorlage_d ,"'","\\\\'")
+metadata$Vorlage_f <- str_replace_all(metadata$Vorlage_f ,"'","\\\\'")
+metadata$Vorlage_i <- str_replace_all(metadata$Vorlage_i ,"'","\\\\'")
+
+mydb <- connectDB(db_name = "sda_votes")
+for (m in 1:nrow(metadata)) {
+  sql_qry <- paste0("INSERT IGNORE INTO votes_metadata(votes_ID,date,area_ID,title_de,title_fr,title_it,status) VALUES ",
+                    "('",metadata$Vorlage_ID[m],"','",date_voting,"','",metadata$Kanton[m],"','",metadata$Vorlage_d[m],"','",metadata$Vorlage_f[m],"','",metadata$Vorlage_i[m],"','upcoming')")
+  rs <- dbSendQuery(mydb, sql_qry)
+}
+
+
