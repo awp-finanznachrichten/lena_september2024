@@ -203,10 +203,15 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
   write.csv(output_dw_it,paste0("Output_Cantons/",kantonal_short_special[s],"_dw_it_initiative.csv"), na = "", row.names = FALSE, fileEncoding = "UTF-8")
   
   ###OUTPUT GEGENVORSCHLAG
-  results$Gemeinde_color <- results$Ja_Prozent_Gegenvorschlag
-  results$Ja_Stimmen_In_Prozent <- results$Ja_Prozent_Gegenvorschlag
-  results$Nein_Stimmen_In_Prozent <- results$Nein_Prozent_Gegenvorschlag
-  
+  for (r in 1:nrow(results)) {
+
+  if (is.na(results$Ja_Prozent_Gegenvorschlag[r]) == FALSE) {
+  results$Gemeinde_color[r] <- results$Ja_Prozent_Gegenvorschlag[r]
+  results$Ja_Stimmen_In_Prozent[r] <- results$Ja_Prozent_Gegenvorschlag[r]
+  results$Nein_Stimmen_In_Prozent[r] <- results$Nein_Prozent_Gegenvorschlag[r]
+  }
+  }
+
   #Output Abstimmungen Gemeinde
   output_dw_de_gegenvorschlag <- get_output_gemeinden(results,language = "de")
   output_dw_fr_gegenvorschlag <- get_output_gemeinden(results,language = "fr")
@@ -218,10 +223,13 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
   write.csv(output_dw_it_gegenvorschlag,paste0("Output_Cantons/",kantonal_short_special[s],"_dw_it_gegenvorschlag.csv"), na = "", row.names = FALSE, fileEncoding = "UTF-8")
   
   ###OUTPUT STICHENTSCHEIDUG
-  results$Gemeinde_color <- results$Stichentscheid_Zustimmung_Hauptvorlage
-  results$Ja_Stimmen_In_Prozent <- results$Stichentscheid_Zustimmung_Hauptvorlage
-  results$Nein_Stimmen_In_Prozent <- results$Stichentscheid_Zustimmung_Gegenvorschlag
-  
+  for (r in 1:nrow(results)) {
+  if (is.na(results$Stichentscheid_Zustimmung_Hauptvorlage[r]) == FALSE) {
+  results$Gemeinde_color[r] <- results$Stichentscheid_Zustimmung_Hauptvorlage[r]
+  results$Ja_Stimmen_In_Prozent[r] <- results$Stichentscheid_Zustimmung_Hauptvorlage[r]
+  results$Nein_Stimmen_In_Prozent[r] <- results$Stichentscheid_Zustimmung_Gegenvorschlag[r]
+  }
+  }
   #Output Abstimmungen Gemeinde
   output_dw_de_stichentscheid <- get_output_gemeinden(results,language = "de")
   output_dw_fr_stichentscheid <- get_output_gemeinden(results,language = "fr")
