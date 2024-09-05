@@ -270,16 +270,7 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
     if (is.na(results_kantonal_special_initiative) == FALSE) {
       
       
-      undertitel_overview_de <- paste0("Die brieflichen Stimmen sind ausgezählt.<br>Stand Initiative: <b>",
-                              round(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
-                              round(100-results_kantonal_special_initiative,1)," %</b> Nein<br>",
-                              "Stand Gegenvorschlag: <b>",
-                              round(results_kantonal_special_gegenvorschlag,1)," %</b> Ja, <b>",
-                              round(100-results_kantonal_special_gegenvorschlag,1)," %</b> Nein<br>",
-                              "Stand Stichentscheid: <b>",
-                              round(results_kantonal_special_stichentscheid,1)," %</b> Initiative, <b>",
-                              round(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag"
-      )
+      undertitel_overview_de <- paste0("Die brieflichen Stimmen sind ausgezählt." )
       
       undertitel_initiative_de <- paste0("Die brieflichen Stimmen sind ausgezählt.<br>Stand Initiative: <b>",
                               round(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
@@ -293,16 +284,7 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
                                              round(results_kantonal_special_stichentscheid,1)," %</b> Initiative, <b>",
                                              round(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag")
       
-      undertitel_overview_fr <- paste0("Les votes par correspondance ont été dépouillés.<br>Etat initiative: <b>",
-                              round(results_kantonal_special_initiative,1)," %</b> oui, <b>",
-                              round(100-results_kantonal_special_initiative,1)," %</b> non<br>",
-                              "Etat contre-proposition: <b>",
-                              round(results_kantonal_special_gegenvorschlag,1)," %</b> oui, <b>",
-                              round(100-results_kantonal_special_gegenvorschlag,1)," %</b> non<br>",
-                              "Etat question subsidiaire: <b>",
-                              round(results_kantonal_special_stichentscheid,1)," %</b> initiative, <b>",
-                              round(100-results_kantonal_special_stichentscheid,1)," %</b> contre-proposition"
-      )
+      undertitel_overview_fr <- paste0("Les votes par correspondance ont été dépouillés")
       
       undertitel_initiative_fr <- paste0("Les votes par correspondance ont été dépouillés.<br>Etat initiative: <b>",
                                          round(results_kantonal_special_initiative,1)," %</b> oui, <b>",
@@ -319,15 +301,7 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
       if (nrow(results_notavailable) == 0) {
         
         undertitel_overview_de <- paste0("Es sind <b>",sum(results$Gebiet_Ausgezaehlt),"</b> von <b>",nrow(results),
-                                "</b> Gemeinden ausgezählt.<br>Stand Initiative: <b>",
-                                round(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
-                                round(100-results_kantonal_special_initiative,1)," %</b> Nein<br>",
-                                "Stand Gegenvorschlag: <b>",
-                                round(results_kantonal_special_gegenvorschlag,1)," %</b> Ja, <b>",
-                                round(100-results_kantonal_special_gegenvorschlag,1)," %</b> Nein<br>",
-                                "Stand Stichentscheid: <b>",
-                                round(results_kantonal_special_stichentscheid,1)," %</b> Initiative, <b>",
-                                round(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag")
+                                "</b> Gemeinden ausgezählt.")
         
         undertitel_initiative_de <- paste0("Resultat Initiative: <b>",
                                            round(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
@@ -340,15 +314,7 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
                                               round(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag")
         
         undertitel_overview_fr <- paste0("Les résultats de <b>",sum(results$Gebiet_Ausgezaehlt),"</b> des <b>",nrow(results),
-                                "</b> communes sont connus.<br>Etat initiative: <b>",
-                                round(results_kantonal_special_initiative,1)," %</b> oui, <b>",
-                                round(100-results_kantonal_special_initiative,1)," %</b> non<br>",
-                                "Etat contre-proposition: <b>",
-                                round(results_kantonal_special_gegenvorschlag,1)," %</b> oui, <b>",
-                                round(100-results_kantonal_special_gegenvorschlag,1)," %</b> non<br>",
-                                "Etat question subsidiaire: <b>",
-                                round(results_kantonal_special_stichentscheid,1)," %</b> initiative, <b>",
-                                round(100-results_kantonal_special_stichentscheid,1)," %</b> contre-proposition")
+                                "</b> communes sont connus.")
         
         undertitel_initiative_fr <- paste0("Résultats initiative: <b>",
                                            round(results_kantonal_special_initiative,1)," %</b> oui, <b>",
@@ -361,6 +327,10 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
                                                 round(100-results_kantonal_special_stichentscheid,1)," %</b> contre-proposition")
         
       } else if  (sum(results$Gebiet_Ausgezaehlt) > 0 ) {
+        
+        undertitel_overview_de <- paste0("Es sind <b>",sum(results$Gebiet_Ausgezaehlt),"</b> von <b>",nrow(results),
+                                           "</b> Gemeinden ausgezählt.")  
+        
       undertitel_initiative_de <- paste0("Es sind <b>",sum(results$Gebiet_Ausgezaehlt),"</b> von <b>",nrow(results),
                               "</b> Gemeinden ausgezählt.<br>Stand Initiative: <b>",
                               round(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
@@ -373,6 +343,9 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
                                          "</b> Gemeinden ausgezählt.<br>Stand Stichentscheid: <b>",
                                          round(results_kantonal_special_stichentscheid,1)," %</b> Initiative, <b>",
                                          round(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag")
+      
+      undertitel_overview_fr <- paste0("Les résultats de <b>",sum(results$Gebiet_Ausgezaehlt),"</b> des <b>",nrow(results),
+                                         "</b> communes sont connus.")
       
       undertitel_initiative_fr <- paste0("Les résultats de <b>",sum(results$Gebiet_Ausgezaehlt),"</b> des <b>",nrow(results),
                               "</b> communes sont connus.<br>Etat initiative: <b>",
