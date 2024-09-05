@@ -390,7 +390,7 @@ write.csv(data_overview,"Output_Overviews/Uebersicht_dw.csv", na = "", row.names
 #DEUTSCH
 dw_data_to_chart(data_overview,datawrapper_codes[1,5])
 if (nrow(results_notavailable) == 0) {
-titel_de <- paste0("Die Abstimmungen vom ",day(date_voting),". ",monate_de[month(date_voting)]," ",year(date_voting)," in der Übersicht")  
+titel_de <- paste0("Die Abstimmungen vom ",day(voting_date),". ",monate_de[month(voting_date)]," ",year(voting_date)," in der Übersicht")  
 dw_edit_chart(datawrapper_codes[1,5],
               title = titel_de,
               intro = "")
@@ -402,7 +402,7 @@ dw_publish_chart(datawrapper_codes[1,5])
 #FRANZOESICH
 dw_data_to_chart(data_overview,datawrapper_codes[2,5])
 if (nrow(results_notavailable) == 0) {
-titel_fr <- paste0("Les résultats des votes du ",day(date_voting)," ",monate_fr[month(date_voting)]," ",year(date_voting))
+titel_fr <- paste0("Les résultats des votes du ",day(voting_date)," ",monate_fr[month(voting_date)]," ",year(voting_date))
 dw_edit_chart(datawrapper_codes[2,5],
                 title = titel_fr,
                 intro = "")
@@ -414,7 +414,7 @@ dw_publish_chart(datawrapper_codes[2,5])
 #ITALIENISCH
 dw_data_to_chart(data_overview,datawrapper_codes[3,5])
 if (nrow(results_notavailable) == 0) {
-titel_it <- paste0("I risultati delle votazioni del ",day(date_voting)," ",monate_it[month(date_voting)]," ",year(date_voting))
+titel_it <- paste0("I risultati delle votazioni del ",day(voting_date)," ",monate_it[month(voting_date)]," ",year(voting_date))
 dw_edit_chart(datawrapper_codes[3,5],
               title = titel_it,
               intro = "")

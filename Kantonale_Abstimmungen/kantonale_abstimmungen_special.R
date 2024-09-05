@@ -157,28 +157,28 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
   for (z in 1:nrow(results)) {
     
   if (grepl("Intro_HauptvorlageJa_GegenvorschlagJa_StichentscheidHauptvorlage|Intro_HauptvorlageJa_GegenvorschlagNein",results$Storyboard[z]) == TRUE) {
-  output_dw_de_overview$Gemeinde_color[z] <- "Initiative"
-  output_dw_fr_overview$Gemeinde_color[z] <- "Initiative"
-  output_dw_it_overview$Gemeinde_color[z] <- "Initiative"
+  output_dw_de_overview$Gemeinde_color[z] <- "Initiative Ja"
+  output_dw_fr_overview$Gemeinde_color[z] <- "initiative oui"
+  output_dw_it_overview$Gemeinde_color[z] <- "iniziative si"
   }  
     
   if (grepl("Intro_HauptvorlageJa_GegenvorschlagJa_StichentscheidGegenvorschlag|Intro_HauptvorlageNein_GegenvorschlagJa",results$Storyboard[z]) == TRUE) {
-      output_dw_de_overview$Gemeinde_color[z] <- "Gegenvorschlag"
-      output_dw_fr_overview$Gemeinde_color[z] <- "Gegenvorschlag"
-      output_dw_it_overview$Gemeinde_color[z] <- "Gegenvorschlag"
+      output_dw_de_overview$Gemeinde_color[z] <- "Gegenvorschlag Ja"
+      output_dw_fr_overview$Gemeinde_color[z] <- "contre-proposition oui"
+      output_dw_it_overview$Gemeinde_color[z] <- "controproposta si"
   }  
     
     
   if (grepl("Intro_HauptvorlageNein_GegenvorschlagNein",results$Storyboard[z]) == TRUE) {
       output_dw_de_overview$Gemeinde_color[z] <- "Zweimal Nein"
-      output_dw_fr_overview$Gemeinde_color[z] <- "Zweimal Nein"
-      output_dw_it_overview$Gemeinde_color[z] <- "Zweimal Nein"
+      output_dw_fr_overview$Gemeinde_color[z] <- "deux fois non"
+      output_dw_it_overview$Gemeinde_color[z] <- "due no"
   }  
     
     if (is.na(results$Storyboard[z]) == TRUE) {
-      output_dw_de_overview$Gemeinde_color[z] <- "Not Counted"
-      output_dw_fr_overview$Gemeinde_color[z] <- "Not Counted"
-      output_dw_it_overview$Gemeinde_color[z] <- "Not Counted"
+      output_dw_de_overview$Gemeinde_color[z] <- "Noch keine Resultate"
+      output_dw_fr_overview$Gemeinde_color[z] <- "aucun résultat"
+      output_dw_it_overview$Gemeinde_color[z] <- "nessun risultato"
     }  
       
   }  
