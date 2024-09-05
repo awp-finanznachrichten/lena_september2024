@@ -58,7 +58,7 @@ if (time_check_kantonal == FALSE) {
   if (length(kantonal_number) > 0) {
   source("./Kantonale_Abstimmungen/kantonale_abstimmungen.R", encoding="UTF-8")
   }
-  
+
   ###Kantonale Abstimmungen Sonderfälle###
   if (length(kantonal_number_special) > 0) {
   source("./Kantonale_Abstimmungen/kantonale_abstimmungen_special.R", encoding="UTF-8")

@@ -179,7 +179,7 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short[k],"_texte.xlsx"))
     }
     
     datawrapper_codes_vorlage <- datawrapper_codes_kantonal[datawrapper_codes_kantonal$Vorlage == kantonal_short[k],]
-
+    
     #Karten Gemeinden
     for (r in 1:nrow(datawrapper_codes_vorlage)) {
       if (datawrapper_codes_vorlage$Sprache[r] == "de-DE") {
