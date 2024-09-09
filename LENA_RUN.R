@@ -69,7 +69,7 @@ if (time_check_kantonal == FALSE) {
   data_second_canton <- read.csv("./Output_Cantons/BE_Concordat_dw_de.csv")
   data_combined <- rbind(data_first_canton,data_second_canton)
   write.csv(data_combined,"./Output_Cantons/BE_JU_Concordat_dw_de.csv",row.names = FALSE, fileEncoding = "UTF-8")
-  
+
   data_first_canton <- read.csv("./Output_Cantons/JU_Concordat_dw_fr.csv")
   data_second_canton <- read.csv("./Output_Cantons/BE_Concordat_dw_fr.csv")
   data_combined <- rbind(data_first_canton,data_second_canton)
