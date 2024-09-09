@@ -16,7 +16,6 @@ vorlagen_kantonal <- kantone_list$vorlagen[[k]]
 
 check_counted <- c() 
 
-
 for (i in 1:nrow(vorlagen_kantonal)) {
 check_counted[i] <- FALSE
 results <- get_results_kantonal(json_data_kantone,
@@ -73,7 +72,7 @@ if (sum(results$Gebiet_Ausgezaehlt) > 0 ) {
                                sum(results$Gebiet_Ausgezaehlt)," dei ",nrow(results)," comuni sono noti (",
                                round((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
                                "%)")
-  titel_all$title_de[1]
+
   if (sum(results$Gebiet_Ausgezaehlt) == nrow(results)) {
     uebersicht_text_de <- paste0("<b>",titel_all$title_de[1],"</b>")
     
@@ -151,8 +150,8 @@ Body <- paste0("Liebes Keystone-SDA-Team,\n\n",
                paste(paste0("https://datawrapper.dwcdn.net/",datawrapper_ids$ID),collapse = "\n"),
                "\n\nBitte falls gewünscht die Übersichtsgrafik sowie die Karten (falls vorhanden) ins Visual hochladen.\n\n",
                "Liebe Grüsse\n\nLENA")
-send_notification(Subject,Body,
-                  paste0(DEFAULT_MAILS,",",selected_mail$mail_KeySDA[1]))
+#send_notification(Subject,Body,
+#                  paste0(DEFAULT_MAILS,",",selected_mail$mail_KeySDA[1]))
 
 }
 }  else {

@@ -63,6 +63,18 @@ if (time_check_kantonal == FALSE) {
   if (length(kantonal_number_special) > 0) {
   source("./Kantonale_Abstimmungen/kantonale_abstimmungen_special.R", encoding="UTF-8")
   }
+  
+  ###SPECIAL CASE: Fuse two cantons###
+  data_first_canton <- read.csv("./Output_Cantons/JU_Concordat_dw_de.csv")
+  data_second_canton <- read.csv("./Output_Cantons/BE_Concordat_dw_de.csv")
+  data_combined <- rbind(data_first_canton,data_second_canton)
+  write.csv(data_combined,"./Output_Cantons/BE_JU_Concordat_dw_de.csv",row.names = FALSE, fileEncoding = "UTF-8")
+  
+  data_first_canton <- read.csv("./Output_Cantons/JU_Concordat_dw_fr.csv")
+  data_second_canton <- read.csv("./Output_Cantons/BE_Concordat_dw_fr.csv")
+  data_combined <- rbind(data_first_canton,data_second_canton)
+  write.csv(data_combined,"./Output_Cantons/BE_JU_Concordat_dw_fr.csv",row.names = FALSE, fileEncoding = "UTF-8")
+  
   #Make Commit
   source("./Config/commit.R", encoding="UTF-8")
 }

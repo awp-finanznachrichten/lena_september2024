@@ -210,3 +210,5 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short[k],"_texte.xlsx"))
     cat(paste0("\nVorlage ",kantonal_short[k]," bereits komplett\n"))  
   }  
 }
+
+

@@ -638,7 +638,8 @@ vorlagen <- kantone_list$vorlagen[[k]]
 
 vorlage_titel <- vorlagen$vorlagenTitel[[1]]
 vorlage_titel <- vorlage_titel %>%
-    filter(nchar(text) > 5)
+    filter(nchar(text) > 5,
+           langKey != "rm")
 
 for (v in 1:nrow(vorlage_titel)) {
   if (vorlage_titel$langKey[v] == "de") {
