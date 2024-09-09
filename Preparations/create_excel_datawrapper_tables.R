@@ -1,29 +1,29 @@
-#Working Directory definieren
-setwd("C:/Users/simon/OneDrive/LENA_Project/20240609_LENA_Abstimmungen")
+#Set Working Path
+MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
+setwd(MAIN_PATH)
 
-###Funktionen laden
-source("./Funktionen/functions_readin.R", encoding = "UTF-8")
-source("./Funktionen/functions_storyfinder.R", encoding = "UTF-8")
-source("./Funktionen/functions_storybuilder.R", encoding = "UTF-8")
-source("./Funktionen/functions_output.R", encoding = "UTF-8")
-source("./tools/Funktionen/Utils.R", encoding = "UTF-8")
+#Load Libraries and Functions
+source("./Config/load_libraries_functions.R",encoding = "UTF-8")
 
-###Config: Bibliotheken laden, Pfade/Links definieren, bereits vorhandene Daten laden
-source("CONFIG.R",encoding = "UTF-8")
+###Set Constants###
+source("./Config/set_constants.R",encoding = "UTF-8")
+
+###Load texts and metadata###
+source("./Config/load_texts_metadata.R",encoding = "UTF-8")
 
 ###Grafiken erstellen und Daten speichern
 grafiken_uebersicht <- data.frame("Typ","Vorlage","Titel","Sprache","ID","Link","Iframe","Script")
 colnames(grafiken_uebersicht) <- c("Typ","Vorlage","Titel","Sprache","ID","Link","Iframe","Script")
 
-ids <- c("HqKKF","X5Ww6","TLmj6","FBOdI","hZor3","Zsjek","7uTf0","6NX3q",
-        "BxRuI","LiDKo","X4eEL","vsJSX","17Sh7","6sLik","jbeAJ","1q77q",
-        "M5Dfo","bK0IT","r4id3","FtseI","YoPZp","SRCbA","2GDkN","BQlYn")
+ids <- c("mkn6k","2I0SZ","F3wIY","Ro2H4",
+         "uGnmU","y4CXn","2I4TB","q8Q4r",
+        "iPDtu","pMGGE","VwGeQ","CosFC")
 
 for (id in ids) {
 
 metadata_chart <- dw_retrieve_chart_metadata(id)
 
-new_entry <- data.frame("Top/Flop Tabellen",
+new_entry <- data.frame("Krankenkassen",
                         "",
                         metadata_chart$content$title,
                         metadata_chart$content$language,
