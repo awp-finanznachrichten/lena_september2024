@@ -22,32 +22,11 @@ source("./Vot-Tool/SRG_API_Request.R", encoding = "UTF-8")
 ###Write Data in DB###
 source("./Vot-Tool/write_DB_entries.R", encoding = "UTF-8")
 
+###Load DBs
+source("./Vot-Tool/load_DBs.R", encoding = "UTF-8")
+
 #####CREATE NEWS AND SEND MAIL IF CANTON IS COMPLETE#####
-###GET CURRENT RESULTS ###
-mydb <- connectDB(db_name="sda_votes")
-rs <- dbSendQuery(mydb, "SELECT * FROM cantons_results")
-cantons_results <- DBI::fetch(rs,n=-1)
-dbDisconnectAll()
-  
-###GET OUTPUT OVERVIEW###
-mydb <- connectDB(db_name="sda_votes")
-rs <- dbSendQuery(mydb, paste0("SELECT * FROM output_overview WHERE date = '",voting_date,"' AND area_ID != 'CH' AND voting_type = 'national'"))
-output_overview <- DBI::fetch(rs,n=-1)
-dbDisconnectAll()
-
-###GET OUTPUT NEWS INTERMEDIATE###
-mydb <- connectDB(db_name="sda_votes")
-rs <- dbSendQuery(mydb, "SELECT * FROM output_news_intermediate WHERE news_intermediate = 'pending'")
-output_news_intermediate <- DBI::fetch(rs,n=-1)
-dbDisconnectAll()
-
-###GET EXTRAPOLATIONS###
-mydb <- connectDB(db_name="sda_votes")
-rs <- dbSendQuery(mydb, paste0("SELECT * FROM extrapolations"))
-extrapolations <- DBI::fetch(rs,n=-1)
-dbDisconnectAll()
-
-  for (i in 1:nrow(output_overview)) {
+for (i in 1:nrow(output_overview)) {
     canton_results <- cantons_results %>%
       filter(area_ID == output_overview$area_ID[i]) 
     
@@ -68,21 +47,16 @@ dbDisconnectAll()
       }  
     }
   }  
-  
 
-#Zwischenstand?
+#####CREATE INTERMEDIATE NEWS####
 if (Sys.time() > output_news_intermediate$timestamp[1]) {
   print("Generiere Zwischenstands-Meldungen...")
   source("./Vot-Tool/create_news_intermediate.R", encoding="UTF-8") 
 }
 
+#####CREATE ELECTION COMPLETED REPORT####
 
-#Abstimmung komplett?
-mydb <- connectDB(db_name="sda_votes")
-rs <- dbSendQuery(mydb, paste0("SELECT * FROM output_overview WHERE date = '",voting_date,"' AND area_ID = 'CH'"))
-output_overview <- DBI::fetch(rs,n=-1)
-dbDisconnectAll()
-if ((output_overview$mail_results[1] == "pending") & (sum(json_data[["schweiz"]][["vorlagen"]][["vorlageBeendet"]] == FALSE) == 0) ) {
+if ((output_overview_national$mail_results[1] == "pending") & (sum(json_data[["schweiz"]][["vorlagen"]][["vorlageBeendet"]] == FALSE) == 0) ) {
   print("Alle Abstimmungsresultate komplett!")
   source("./Vot-Tool/create_report_election_completed.R", encoding="UTF-8") 
 }  

@@ -1,4 +1,4 @@
-votation_ids <- c(5005,5006,5007,5008)
+votation_ids <- c(5081,5082)
 
 ###GET CURRENT RESULTS ###
 mydb <- connectDB(db_name="sda_votes")
@@ -7,12 +7,14 @@ extrapolations <- DBI::fetch(rs,n=-1)
 dbDisconnectAll()
 extrapolations$last_update <- strptime(extrapolations$last_update, format = '%Y-%m-%d %H:%M:%S')
 
+
 for (v in 1:length(votation_ids)) {
 
 current_trend <- extrapolations %>%
   filter(votes_ID == vorlagen$id[v],
          type == "trend")
   
+
 #Trend
 link <- paste0("https://srgssr-prod.apigee.net/polis-api-internal/v2/Polis.Votations?apikey=a660OBYrTkO9dNaxb3ExzKMDFIqGOiH4&lang=de&votationid=",votation_ids[v],"&locationtypeid=1&dataConditionID=6")
 data <- GET(link)
@@ -130,7 +132,6 @@ if (length(timestamp) > 0) {
     votes_no <- as.numeric(xml_text(xml_find_all(content,".//Relative/No")))
     
     #Write in DB
-    
     mydb <- connectDB(db_name = "sda_votes")
     sql_qry <- paste0(
       "UPDATE extrapolations SET ",

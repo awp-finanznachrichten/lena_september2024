@@ -41,7 +41,7 @@ dbDisconnectAll()
 
 #Extrapolations
 types <- c("extrapolation 1","extrapolation 2","extrapolation 3","trend")
-SRG_IDs <- c()
+SRG_IDs <- c(5081,5082)
 mydb <- connectDB(db_name = "sda_votes")
 for (i in 1:nrow(vorlagen)) {
   for (type in types) {
