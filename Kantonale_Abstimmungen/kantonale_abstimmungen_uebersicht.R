@@ -150,8 +150,8 @@ Body <- paste0("Liebes Keystone-SDA-Team,\n\n",
                paste(paste0("https://datawrapper.dwcdn.net/",datawrapper_ids$ID),collapse = "\n"),
                "\n\nBitte falls gewünscht die Übersichtsgrafik sowie die Karten (falls vorhanden) ins Visual hochladen.\n\n",
                "Liebe Grüsse\n\nLENA")
-send_notification(Subject,Body,
-                  paste0(DEFAULT_MAILS,",",selected_mail$mail_KeySDA[1]))
+#send_notification(Subject,Body,
+#                  paste0(DEFAULT_MAILS,",",selected_mail$mail_KeySDA[1]))
 
 }
 }  else {

@@ -14,17 +14,28 @@ dbDisconnectAll()
 mydb <- connectDB(db_name = "sda_votes")
   for (k in 1:nrow(meta_kt)) {
     sql_qry <- paste0("INSERT IGNORE INTO output_overview(date,area_ID,voting_type) VALUES ",
-                      "('",date_voting,"','",meta_kt$area_ID[k],"','national')")
+                      "('",voting_date,"','",meta_kt$area_ID[k],"','national')")
     rs <- dbSendQuery(mydb, sql_qry)
   }
 
 
+
+kantone_list <- json_data_kantone[["kantone"]]
+
+for (k in 1:nrow(kantone_list)) {
+  sql_qry <- paste0("INSERT IGNORE INTO output_overview(date,area_ID,voting_type) VALUES ",
+                    "('",voting_date,"','",kantone_list$geoLevelname[k],"','cantonal')")
+  rs <- dbSendQuery(mydb, sql_qry)
+}
+
+
 dbDisconnectAll()
+
 
 ###ADD CH-Entry
 mydb <- connectDB(db_name = "sda_votes")
 sql_qry <- paste0("INSERT IGNORE INTO output_overview(date,area_ID,voting_type) VALUES ",
-                    "('",date_voting,"','CH','national')")
+                    "('",voting_date,"','CH','national')")
 rs <- dbSendQuery(mydb, sql_qry)
 dbDisconnectAll()
 
