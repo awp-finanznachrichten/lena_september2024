@@ -1,4 +1,4 @@
-votation_ids <- c(5081,5082)
+
 
 ###GET CURRENT RESULTS ###
 mydb <- connectDB(db_name="sda_votes")
@@ -8,15 +8,14 @@ dbDisconnectAll()
 extrapolations$last_update <- strptime(extrapolations$last_update, format = '%Y-%m-%d %H:%M:%S')
 
 
-for (v in 1:length(votation_ids)) {
+for (v in 1:length(VOTATION_IDS_SRG)) {
 
 current_trend <- extrapolations %>%
   filter(votes_ID == vorlagen$id[v],
          type == "trend")
-  
 
 #Trend
-link <- paste0("https://srgssr-prod.apigee.net/polis-api-internal/v2/Polis.Votations?apikey=a660OBYrTkO9dNaxb3ExzKMDFIqGOiH4&lang=de&votationid=",votation_ids[v],"&locationtypeid=1&dataConditionID=6")
+link <- paste0("https://srgssr-prod.apigee.net/polis-api-internal/v2/Polis.Votations?apikey=a660OBYrTkO9dNaxb3ExzKMDFIqGOiH4&lang=de&votationid=",VOTATION_IDS_SRG[v],"&locationtypeid=1&dataConditionID=6")
 data <- GET(link)
 content <- read_xml(data)
 timestamp <- strptime(xml_text(xml_find_all(content,".//LastUpdate")),format = '%Y-%m-%dT%H:%M:%S')
@@ -25,7 +24,7 @@ if (length(timestamp) > 0) {
   if (timestamp != current_trend$last_update) {
 print(paste0("New trend found for ",vorlagen$text[v]))
 trend <- xml_text(xml_find_all(content,".//ResultCondition"))
-
+link
 #Write in DB
 mydb <- connectDB(db_name = "sda_votes")
 sql_qry <- paste0(
@@ -49,10 +48,14 @@ Body <- paste0("Liebes Keystone-SDA-Team,\n\n",
                "Die SRG hat einen Trend zur ",vorlagen$text[v]," veröffentlicht.\n\n",
                "Trend: ",trend,"\n",
                "Veröffentlichungszeitpunkt: ",timestamp,"\n\n",
+               "Ihr findet die Flash-Meldungen im Mars im Input-Ordner Lena.\n\n",
                "Liebe Grüsse\n\nLENA")
 send_notification(Subject,
                   Body,
                   paste0(DEFAULT_MAILS))
+
+source("./Vot-Tool/create_flash_trend.R", encoding="UTF-8") 
+
 }
 }
 
@@ -61,7 +64,7 @@ current_extrapolation <- extrapolations %>%
   filter(votes_ID == vorlagen$id[v],
          type == "extrapolation 1")
 
-link <- paste0("https://srgssr-prod.apigee.net/polis-api-internal/v2/Polis.Votations?apikey=a660OBYrTkO9dNaxb3ExzKMDFIqGOiH4&lang=de&votationid=",votation_ids[v],"&locationtypeid=1&dataConditionID=4")
+link <- paste0("https://srgssr-prod.apigee.net/polis-api-internal/v2/Polis.Votations?apikey=a660OBYrTkO9dNaxb3ExzKMDFIqGOiH4&lang=de&votationid=",VOTATION_IDS_SRG[v],"&locationtypeid=1&dataConditionID=4")
 data <- GET(link)
 content <- read_xml(data)
 timestamp <- strptime(xml_text(xml_find_all(content,".//LastUpdate")),format = '%Y-%m-%dT%H:%M:%S')
@@ -105,10 +108,14 @@ if (length(timestamp) > 0) {
                  "Ja-Anteil: ",votes_yes,"%\n",
                  "Nein-Anteil: ",votes_no,"%\n",
                  "Veröffentlichungszeitpunkt: ",timestamp,"\n\n",
+                 "Ihr findet die Flash-Meldungen im Mars im Input-Ordner Lena.\n\n",
                  "Liebe Grüsse\n\nLENA")
   send_notification(Subject,
                     Body,
                     paste0(DEFAULT_MAILS))
+  
+  source("./Vot-Tool/create_flash_hochrechnung.R", encoding="UTF-8") 
+  
   }
 }
 
@@ -118,7 +125,7 @@ current_extrapolation <- extrapolations %>%
   filter(votes_ID == vorlagen$id[v],
          type == "extrapolation 2")
 
-link <- paste0("https://srgssr-prod.apigee.net/polis-api-internal/v2/Polis.Votations?apikey=a660OBYrTkO9dNaxb3ExzKMDFIqGOiH4&lang=de&votationid=",votation_ids[v],"&locationtypeid=1&dataConditionID=8")
+link <- paste0("https://srgssr-prod.apigee.net/polis-api-internal/v2/Polis.Votations?apikey=a660OBYrTkO9dNaxb3ExzKMDFIqGOiH4&lang=de&votationid=",VOTATION_IDS_SRG[v],"&locationtypeid=1&dataConditionID=8")
 data <- GET(link)
 content <- read_xml(data)
 timestamp <- strptime(xml_text(xml_find_all(content,".//LastUpdate")),format = '%Y-%m-%dT%H:%M:%S')
@@ -161,10 +168,14 @@ if (length(timestamp) > 0) {
                    "Ja-Anteil: ",votes_yes,"%\n",
                    "Nein-Anteil: ",votes_no,"%\n",
                    "Veröffentlichungszeitpunkt: ",timestamp,"\n\n",
+                   "Ihr findet die Flash-Meldungen im Mars im Input-Ordner Lena.\n\n",
                    "Liebe Grüsse\n\nLENA")
     send_notification(Subject,
                       Body,
                       paste0(DEFAULT_MAILS))
+    
+    
+    source("./Vot-Tool/create_flash_hochrechnung.R", encoding="UTF-8") 
   }
 }
 
@@ -173,7 +184,7 @@ current_extrapolation <- extrapolations %>%
   filter(votes_ID == vorlagen$id[v],
          type == "extrapolation 3")
 
-link <- paste0("https://srgssr-prod.apigee.net/polis-api-internal/v2/Polis.Votations?apikey=a660OBYrTkO9dNaxb3ExzKMDFIqGOiH4&lang=de&votationid=",votation_ids[v],"&locationtypeid=1&dataConditionID=9")
+link <- paste0("https://srgssr-prod.apigee.net/polis-api-internal/v2/Polis.Votations?apikey=a660OBYrTkO9dNaxb3ExzKMDFIqGOiH4&lang=de&votationid=",VOTATION_IDS_SRG[v],"&locationtypeid=1&dataConditionID=9")
 data <- GET(link)
 content <- read_xml(data)
 timestamp <- strptime(xml_text(xml_find_all(content,".//LastUpdate")),format = '%Y-%m-%dT%H:%M:%S')
@@ -217,10 +228,14 @@ if (length(timestamp) > 0) {
                    "Ja-Anteil: ",votes_yes,"%\n",
                    "Nein-Anteil: ",votes_no,"%\n",
                    "Veröffentlichungszeitpunkt: ",timestamp,"\n\n",
+                   "Ihr findet die Flash-Meldungen im Mars im Input-Ordner Lena.\n\n",
                    "Liebe Grüsse\n\nLENA")
     send_notification(Subject,
                       Body,
                       paste0(DEFAULT_MAILS))
+    
+    source("./Vot-Tool/create_flash_hochrechnung.R", encoding="UTF-8") 
+    
   }
 }
 }

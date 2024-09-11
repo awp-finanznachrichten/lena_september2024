@@ -1,4 +1,4 @@
-MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
+MAIN_PATH <- "C:/Users/simon/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
 
 #Working Directory definieren
 setwd(MAIN_PATH)
@@ -9,6 +9,10 @@ source("./Config/load_libraries_functions.R",encoding = "UTF-8")
 ###Set Constants###
 source("./Config/set_constants.R",encoding = "UTF-8")
 
+#SET ADDITIONAL CONSTANTS
+VOTATION_IDS_SRG <- c(5081,5082)
+CATCHWORDS_DE <- c("Umwelt","Altersvorsorge")
+
 ###Load texts and metadata###
 source("./Config/load_texts_metadata.R",encoding = "UTF-8")
 
@@ -16,7 +20,7 @@ repeat{
 ###Load JSON Data
 source("./Config/load_json_data.R",encoding = "UTF-8")
 
-#SRG Hochrechnungen
+#SRG Hochrechnungen -> Generate Flashes and send Mail if new data available
 source("./Vot-Tool/SRG_API_Request.R", encoding = "UTF-8")
 
 ###Write Data in DB###
@@ -47,6 +51,13 @@ for (i in 1:nrow(output_overview)) {
       }  
     }
   }  
+  
+#####CREATE FLASH AM STÄNDEMEHR GESCHEITERT (IF NEEDED)####
+for (v in 1:nrow(vorlagen)) {
+if (output_flashes[output_flashes$votes_ID == vorlagen$id[v],]$flash_staendemehr == "pending") {  
+source("./Vot-Tool/create_flash_staendemehr.R", encoding = "UTF-8")  
+}  
+}  
 
 #####CREATE INTERMEDIATE NEWS####
 if (Sys.time() > output_news_intermediate$timestamp[1]) {
@@ -55,10 +66,14 @@ if (Sys.time() > output_news_intermediate$timestamp[1]) {
 }
 
 #####CREATE ELECTION COMPLETED REPORT####
-
-if ((output_overview_national$mail_results[1] == "pending") & (sum(json_data[["schweiz"]][["vorlagen"]][["vorlageBeendet"]] == FALSE) == 0) ) {
+if (sum(json_data[["schweiz"]][["vorlagen"]][["vorlageBeendet"]] == FALSE) == 0)  {
   print("Alle Abstimmungsresultate komplett!")
-  source("./Vot-Tool/create_report_election_completed.R", encoding="UTF-8") 
+if (output_overview_national$mail_results[1] == "pending") { 
+  source("./Vot-Tool/send_mail_election_completed.R", encoding="UTF-8")
+}  
+if (output_overview_national$news_results[1] == "pending") { 
+source("./Vot-Tool/create_news_election_completed.R", encoding="UTF-8") 
+}   
 }  
 Sys.sleep(5)
 }  

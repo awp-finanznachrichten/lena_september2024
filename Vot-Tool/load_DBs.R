@@ -22,6 +22,13 @@ rs <- dbSendQuery(mydb, "SELECT * FROM output_news_intermediate WHERE news_inter
 output_news_intermediate <- DBI::fetch(rs,n=-1)
 dbDisconnectAll()
 
+###GET OUTPUT FLASHES###
+mydb <- connectDB(db_name="sda_votes")
+rs <- dbSendQuery(mydb, "SELECT * FROM output_flashes")
+output_flashes <- DBI::fetch(rs,n=-1)
+dbDisconnectAll()
+
+
 ###GET EXTRAPOLATIONS###
 mydb <- connectDB(db_name="sda_votes")
 rs <- dbSendQuery(mydb, paste0("SELECT * FROM extrapolations"))
