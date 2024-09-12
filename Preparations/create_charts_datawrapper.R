@@ -180,7 +180,7 @@ for (k in 1:length(kantonal_short)) {
 
 if (is.na(Vorlagen_Info$Vorlage_d) == FALSE) {
   data_chart <- dw_copy_chart(vorlagen_gemeinden[1])
-  created_folder <- dw_create_folder(paste0(kantonal_short[k],"_DE"),parent_id = folder_kantonal$id) #"166825"
+  created_folder <- dw_create_folder(paste0(kantonal_short[k],"_DE"),parent_id = 262397) 
 
   dw_edit_chart(data_chart$id,
                 title=Vorlagen_Info$Vorlage_d,
