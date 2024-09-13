@@ -144,7 +144,7 @@ texts <- results %>%
            Text_f,
            Text_i)
 library(xlsx)
-write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"))
+write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"),row.names = FALSE)
 }
   ###Output generieren für Datawrapper
   
