@@ -4,7 +4,7 @@ voting_date <- "2024-09-22"
 date_voting <- "20240922"
 
 #Save texts? Simulation? Default FALSE
-save_texts <- TRUE
+save_texts <- FALSE
 simulation <- TRUE
 
 #Mail

@@ -71,6 +71,7 @@ results_check <- results_all %>%
 changes_voter_share <- results_check %>%
   filter(check_votes == FALSE)
 
+
 if (nrow(changes_voter_share) > 0) {
 print(paste0("ATTENTION: adapted/corrected voter share found for ",paste(changes_voter_share$area_ID, collapse = ", ")))
   mydb <- connectDB(db_name = "sda_votes")
@@ -105,6 +106,23 @@ print(paste0("ATTENTION: adapted/corrected voter share found for ",paste(changes
     rs <- dbSendQuery(mydb, sql_qry)
     
     #Send Mail
+    if (changes_voter_share$source_update[i] == "Vot-Tool") {
+      Subject <- paste0("***TEST***ACHTUNG: BFS-Daten unterscheiden sich von den Vot-Tool-Daten zur Vorlage ",vorlagen$text[v]," im Kanton ",changes_voter_share$area_ID[i],"!")
+      Body <- paste0("Liebes Keystone-SDA-Team,\n\n",
+                     "Die Ergebnisse des BFS zur VOrlage ",vorlagen$text[v]," im Kanton ",changes_voter_share$area_ID[i]," unterscheiden sich von den Eingaben via Vot-Tool.\n\n",
+                     "Neue Ergebnisse (BFS):\n",
+                     "Ja-Anteil: ",changes_voter_share$resultat.jaStimmenInProzent[i],"%, Ja-Stimmen: ",changes_voter_share$resultat.jaStimmenAbsolut[i],"\n",
+                     "Nein-Anteil: ",100-changes_voter_share$resultat.jaStimmenInProzent[i],"%, Nein-Stimmen: ",changes_voter_share$resultat.neinStimmenAbsolut[i],"\n\n",
+                     "Bisherige Ergebnisse (Vot-Tool):\n",
+                     "Ja-Anteil: ",changes_voter_share$share_yes_percentage[i],"%, Ja-Stimmen: ",changes_voter_share$share_yes_votes,"\n",
+                     "Nein-Anteil: ",changes_voter_share$share_no_percentage[i],"%, Nein-Stimmen: ",changes_voter_share$share_no_votes,"\n\n",
+                     "Liebe Grüsse\n\nLENA")
+      send_notification(Subject,
+                        Body,
+                        paste0(DEFAULT_MAILS))  
+
+    } else {
+
     Subject <- paste0("***TEST***ACHTUNG: Korrektur bei den Resultaten zur ",vorlagen$text[v]," im Kanton ",changes_voter_share$area_ID[i]," gefunden!")
     Body <- paste0("Liebes Keystone-SDA-Team,\n\n",
                    "Das BFS hat die Ergebnisse zur ",vorlagen$text[v]," im Kanton ",changes_voter_share$area_ID[i]," korrigiert.\n\n",
@@ -118,6 +136,7 @@ print(paste0("ATTENTION: adapted/corrected voter share found for ",paste(changes
     send_notification(Subject,
                       Body,
                       paste0(DEFAULT_MAILS))
+    }
   }
   dbDisconnectAll()
 
@@ -144,6 +163,21 @@ if (nrow(changes_participation) > 0) {
       "'"
     )
     rs <- dbSendQuery(mydb, sql_qry)
+    
+    
+    if (changes_participation$source_update[i] == "Vot-Tool") {
+      #Send Mail
+      Subject <- paste0("***TEST***ACHTUNG: BFS-Stimmbeteiligung unterscheidet sich von der Vot-Tool-Stimmbeteiligung zur Vorlage ",vorlagen$text[v]," im Kanton ",changes_participation$area_ID[i],"!")
+      Body <- paste0("Liebes Keystone-SDA-Team,\n\n",
+                     "Die Stimmbeteiligung des BFS zur Vorlage ",vorlagen$text[v]," im Kanton ",changes_participation$area_ID[i]," unterscheiden sich von den Eingaben via Vot-Tool.\n\n",
+                     "Neue Stimmbeteiligung (BFS): ",changes_participation$resultat.stimmbeteiligungInProzent[i],"%\n",
+                     "Bisherige Stimmbeteiligung (Vot-Tool): ",changes_participation$voter_participation[i],"%\n\n",
+                     "Liebe Grüsse\n\nLENA")
+      send_notification(Subject,
+                        Body,
+                        paste0(DEFAULT_MAILS))  
+      
+    } else {  
     #Send Mail
     Subject <- paste0("***TEST***ACHTUNG: Korrektur bei der Stimmbeteiligung zur ",vorlagen$text[v]," im Kanton ",changes_participation$area_ID[i]," gefunden!")
     Body <- paste0("Liebes Keystone-SDA-Team,\n\n",
@@ -154,6 +188,7 @@ if (nrow(changes_participation) > 0) {
     send_notification(Subject,
                       Body,
                       paste0(DEFAULT_MAILS))
+    }
     
   }
   dbDisconnectAll()
