@@ -1,5 +1,5 @@
 #Set Working Path
-MAIN_PATH <- "C:/Users/simon/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
+MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
 setwd(MAIN_PATH)
 
 #Load Libraries and Functions
@@ -47,7 +47,7 @@ if (time_check_national == FALSE) {
   source("./Config/commit.R", encoding="UTF-8")
   
   #Tabellen aktualisieren
-  #source("votations_juin_2024/top_flop/top_flop_run.R", encoding="UTF-8")
+  source("votations_septembre_2024/top_flop/09_24_top_flop_run.R", encoding="UTF-8")
 }
 
 if (time_check_kantonal == FALSE) {  
