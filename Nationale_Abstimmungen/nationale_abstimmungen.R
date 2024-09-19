@@ -211,11 +211,11 @@ write.xlsx(texts,paste0("./Texte/",vorlagen_short[i],"_texte.xlsx"),row.names = 
     }
     if (grepl("it",cantons_overview$languages[c]) == TRUE) {
       output_kanton_dw_it <- output_dw_it %>%
-        filter(grepl(paste0(" [(]",cantons_overview$area_ID[c]),"[)]",Gemeinde_it) == TRUE)
+        filter(grepl(paste0(" [(]",cantons_overview$area_ID[c],"[)]"),Gemeinde_it) == TRUE)
     write.csv(output_kanton_dw_it,paste0("Output_Cantons/",cantons_overview$area_ID[c],"_",vorlagen_short[i],"_dw_it.csv"), na = "", row.names = FALSE, fileEncoding = "UTF-8")
     }
   }  
-  
+
   count_non_gemeinden <- output_dw_de[output_dw_de$Nein_Stimmen_In_Prozent>50,]
   count_yes_gemeinden <- output_dw_de[output_dw_de$Ja_Stimmen_In_Prozent>50,]
   count_tie_gemeinden <- output_dw_de[output_dw_de$Ja_Stimmen_In_Prozent == 50,]
