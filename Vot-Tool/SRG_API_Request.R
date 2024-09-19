@@ -1,12 +1,9 @@
-
-
 ###GET CURRENT RESULTS ###
 mydb <- connectDB(db_name="sda_votes")
 rs <- dbSendQuery(mydb, "SELECT * FROM extrapolations")
 extrapolations <- DBI::fetch(rs,n=-1)
 dbDisconnectAll()
 extrapolations$last_update <- strptime(extrapolations$last_update, format = '%Y-%m-%d %H:%M:%S')
-
 
 for (v in 1:length(VOTATION_IDS_SRG)) {
 
@@ -24,7 +21,7 @@ if (length(timestamp) > 0) {
   if (timestamp != current_trend$last_update) {
 print(paste0("New trend found for ",vorlagen$text[v]))
 trend <- xml_text(xml_find_all(content,".//ResultCondition"))
-link
+
 #Write in DB
 mydb <- connectDB(db_name = "sda_votes")
 sql_qry <- paste0(

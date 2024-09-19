@@ -45,8 +45,8 @@ SRG_IDs <- c(5081,5082)
 mydb <- connectDB(db_name = "sda_votes")
 for (i in 1:nrow(vorlagen)) {
   for (type in types) {
-  sql_qry <- paste0("INSERT IGNORE INTO extrapolations(votes_ID,type,SRG_ID) VALUES ",
-                    "('",vorlagen$id[i],"','",type,"','",SRG_IDs[i],"')")
+  sql_qry <- paste0("INSERT IGNORE INTO extrapolations(votes_ID,type,SRG_ID,last_update) VALUES ",
+                    "('",vorlagen$id[i],"','",type,"','",SRG_IDs[i],"','",Sys.time(),"')")
   rs <- dbSendQuery(mydb, sql_qry)
   }
 }  

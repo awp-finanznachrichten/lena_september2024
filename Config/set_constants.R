@@ -5,11 +5,11 @@ date_voting <- "20240922"
 
 #Save texts? Simulation? Default FALSE
 save_texts <- FALSE
-simulation <- TRUE
+simulation <- FALSE
 
 #Mail
-#DEFAULT_MAILS <- "contentdevelopment@keystone-sda.ch, robot-notification@awp.ch"
-DEFAULT_MAILS <- "robot-notification@awp.ch"
+DEFAULT_MAILS <- "contentdevelopment@keystone-sda.ch, robot-notification@awp.ch"
+#DEFAULT_MAILS <- "robot-notification@awp.ch"
 
 #JSON Feeds
 FEED_NATIONAL <- "https://app-prod-static-voteinfo.s3.eu-central-1.amazonaws.com/v1/ogd/sd-t-17-02-20240922-eidgAbstimmung.json"
