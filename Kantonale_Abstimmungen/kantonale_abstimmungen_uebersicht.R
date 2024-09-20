@@ -60,17 +60,17 @@ if (sum(results$Gebiet_Ausgezaehlt) > 0 ) {
   
   uebersicht_text_de <- paste0("<b>",titel_all$title_de[1],"</b><br>",
                                sum(results$Gebiet_Ausgezaehlt)," von ",nrow(results)," Gemeinden ausgezählt (",
-                               round((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
+                               round2((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
                                "%)")
   
   uebersicht_text_fr <- paste0("<b>",titel_all$title_fr[1],"</b><br>",
                                sum(results$Gebiet_Ausgezaehlt)," des ",nrow(results)," communes sont connus (",
-                               round((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
+                               round2((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
                                "%)")
   
   uebersicht_text_it <- paste0("<b>",titel_all$title_it[1],"</b><br>",
                                sum(results$Gebiet_Ausgezaehlt)," dei ",nrow(results)," comuni sono noti (",
-                               round((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
+                               round2((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
                                "%)")
 
   if (sum(results$Gebiet_Ausgezaehlt) == nrow(results)) {
@@ -87,8 +87,8 @@ if (sum(results$Gebiet_Ausgezaehlt) > 0 ) {
     check_counted[i] <- TRUE
   }  
 }
-  Ja_Anteil <- round(Ja_Stimmen_Kanton,1)
-  Nein_Anteil <- round(100-Ja_Stimmen_Kanton,1)
+  Ja_Anteil <- round2(Ja_Stimmen_Kanton,1)
+  Nein_Anteil <- round2(100-Ja_Stimmen_Kanton,1)
 }  
 
 entry_overview <- data.frame(Ja_Anteil,Nein_Anteil,uebersicht_text_de,uebersicht_text_fr,uebersicht_text_it)

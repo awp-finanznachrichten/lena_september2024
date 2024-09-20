@@ -1,4 +1,4 @@
-MAIN_PATH <- "C:/Users/sw/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
+MAIN_PATH <- "C:/Users/simon/OneDrive/SDA_eidgenoessische_abstimmungen/20240922_LENA_Abstimmungen"
 
 #Working Directory definieren
 setwd(MAIN_PATH)
@@ -66,10 +66,10 @@ if (Sys.time() > output_news_intermediate$timestamp[1]) {
 }
 
 #####CREATE ELECTION COMPLETED REPORT####
-if (sum(json_data[["schweiz"]][["vorlagen"]][["vorlageBeendet"]] == FALSE) == 0)  {
+if (sum(grepl("pending",output_overview$news_results)) == 0) {
   print("Alle Abstimmungsresultate komplett!")
 if (output_overview_national$mail_results[1] == "pending") { 
-  source("./Vot-Tool/send_mail_election_completed.R", encoding="UTF-8")
+source("./Vot-Tool/send_mail_election_completed.R", encoding="UTF-8")
 }  
 if (output_overview_national$news_results[1] == "pending") { 
 source("./Vot-Tool/create_news_election_completed.R", encoding="UTF-8") 
@@ -77,3 +77,4 @@ source("./Vot-Tool/create_news_election_completed.R", encoding="UTF-8")
 }  
 Sys.sleep(5)
 }  
+

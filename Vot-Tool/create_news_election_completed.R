@@ -72,10 +72,10 @@ text <- paste0(text,
                "<tr>",
                "<td>Schweiz</td>",
                "<td>",json_data[["schweiz"]][["vorlagen"]][["resultat.jaStimmenAbsolut"]][v],"</td>",
-               "<td>",gsub("[.]",",",format(json_data[["schweiz"]][["vorlagen"]][["resultat.jaStimmenInProzent"]][v],nsmall=2)),"</td>",
+               "<td>",gsub("[.]",",",format(round2(json_data[["schweiz"]][["vorlagen"]][["resultat.jaStimmenInProzent"]][v],2),nsmall=2)),"</td>",
                "<td>",json_data[["schweiz"]][["vorlagen"]][["resultat.neinStimmenAbsolut"]][v],"</td>",
-               "<td>",gsub("[.]",",",format(100-json_data[["schweiz"]][["vorlagen"]][["resultat.jaStimmenInProzent"]][v],nsmall=2)),"</td>",
-               "<td>",gsub("[.]",",",format(json_data[["schweiz"]][["vorlagen"]][["resultat.stimmbeteiligungInProzent"]][v],nsmall=2)),"</td></tr>\n")
+               "<td>",gsub("[.]",",",format(100-round2(json_data[["schweiz"]][["vorlagen"]][["resultat.jaStimmenInProzent"]][v],2),nsmall=2)),"</td>",
+               "<td>",gsub("[.]",",",format(round2(json_data[["schweiz"]][["vorlagen"]][["resultat.stimmbeteiligungInProzent"]][v],2),nsmall=2)),"</td></tr>\n")
 
 text <- paste0(text,"</tbody></table>\n<table><tbody>\n",
 "<tr><td>Stände: ",gsub("[.]",",",staende_yes)," Ja, ",gsub("[.]",",",staende_no)," Nein",

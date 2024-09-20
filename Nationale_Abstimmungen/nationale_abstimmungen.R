@@ -243,22 +243,22 @@ write.xlsx(texts,paste0("./Texte/",vorlagen_short[i],"_texte.xlsx"),row.names = 
 
   if (nrow(results_notavailable) == 0) {
     undertitel_de <- paste0("Volk: <b>",
-                            round(results_national$jaStimmenInProzent,1)," %</b> Ja, <b>",
-                            round(100-results_national$jaStimmenInProzent,1)," %</b> Nein.<br>",
+                            round2(results_national$jaStimmenInProzent,1)," %</b> Ja, <b>",
+                            round2(100-results_national$jaStimmenInProzent,1)," %</b> Nein.<br>",
                             "Stände: <b>",results_national$jaStaendeGanz+(results_national$jaStaendeHalb/2),"</b> Ja, <b>",
                             results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2), "</b> Nein.")
     undertitel_de <- gsub("NA","0",undertitel_de)
     
     undertitel_fr <- paste0("Peuple: <b>",
-                            round(results_national$jaStimmenInProzent,1)," %</b> oui, <b>",
-                            round(100-results_national$jaStimmenInProzent,1)," %</b> non.<br>",
+                            round2(results_national$jaStimmenInProzent,1)," %</b> oui, <b>",
+                            round2(100-results_national$jaStimmenInProzent,1)," %</b> non.<br>",
                             "Cantons: <b>",results_national$jaStaendeGanz+(results_national$jaStaendeHalb/2),"</b> oui, <b>",
                             results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2), "</b> non.")
     undertitel_fr <- gsub("NA","0",undertitel_fr)
     
     undertitel_it <- paste0("Popolo: <b>",
-                            round(results_national$jaStimmenInProzent,1)," %</b> sì, <b>",
-                            round(100-results_national$jaStimmenInProzent,1)," %</b> no.<br>",
+                            round2(results_national$jaStimmenInProzent,1)," %</b> sì, <b>",
+                            round2(100-results_national$jaStimmenInProzent,1)," %</b> no.<br>",
                             "Cantoni: <b>",results_national$jaStaendeGanz+(results_national$jaStaendeHalb/2),"</b> sì, <b>",
                             results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2), "</b> no.")
     undertitel_it <- gsub("NA","0",undertitel_it)
@@ -267,24 +267,24 @@ write.xlsx(texts,paste0("./Texte/",vorlagen_short[i],"_texte.xlsx"),row.names = 
     
     undertitel_de <- paste0("Es sind <b>",sum(results$Gebiet_Ausgezaehlt),"</b> von <b>",nrow(results),
                             "</b> Gemeinden ausgezählt.<br>Volk: <b>",
-                            round(results_national$jaStimmenInProzent,1)," %</b> Ja, <b>",
-                            round(100-results_national$jaStimmenInProzent,1)," %</b> Nein.<br>",
+                            round2(results_national$jaStimmenInProzent,1)," %</b> Ja, <b>",
+                            round2(100-results_national$jaStimmenInProzent,1)," %</b> Nein.<br>",
                             "Stände: <b>",results_national$jaStaendeGanz+(results_national$jaStaendeHalb/2),"</b> Ja, <b>",
                             results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2), "</b> Nein.")
     undertitel_de <- gsub("NA","0",undertitel_de)
 
     undertitel_fr <- paste0("Les résultats de <b>",sum(results$Gebiet_Ausgezaehlt),"</b> des <b>",nrow(results),
                             "</b> communes sont connus. Peuple: <b>",
-                            round(results_national$jaStimmenInProzent,1)," %</b> oui, <b>",
-                            round(100-results_national$jaStimmenInProzent,1)," %</b> non.<br>",
+                            round2(results_national$jaStimmenInProzent,1)," %</b> oui, <b>",
+                            round2(100-results_national$jaStimmenInProzent,1)," %</b> non.<br>",
                             "Cantons: <b>",results_national$jaStaendeGanz+(results_national$jaStaendeHalb/2),"</b> oui, <b>",
                             results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2), "</b> non.")
     undertitel_fr <- gsub("NA","0",undertitel_fr)
     
     undertitel_it <- paste0("I risultati di <b>",sum(results$Gebiet_Ausgezaehlt),"</b> dei <b>",nrow(results),
                             "</b> comuni sono noti. Popolo: <b>",
-                            round(results_national$jaStimmenInProzent,1)," %</b> sì, <b>",
-                            round(100-results_national$jaStimmenInProzent,1)," %</b> no.<br>",
+                            round2(results_national$jaStimmenInProzent,1)," %</b> sì, <b>",
+                            round2(100-results_national$jaStimmenInProzent,1)," %</b> no.<br>",
                             "Cantoni: <b>",results_national$jaStaendeGanz+(results_national$jaStaendeHalb/2),"</b> sì, <b>",
                             results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2), "</b> no.")
     undertitel_it <- gsub("NA","0",undertitel_it)
@@ -327,6 +327,8 @@ Ja_Anteil <- 50
 Nein_Anteil <- 50
 
 if (nrow(results_notavailable) == 0) {
+print(paste0("Alle Gemeinden der Vorlage ",vorlagen$text[i]," ausgezählt!"))
+    
 uebersicht_text_de <- paste0("<b>",vorlagen$text[i],"</b><br>",
                              "Stände: ",results_national$jaStaendeGanz+(results_national$jaStaendeHalb/2)," Ja, ",
                              results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2), " Nein")
@@ -337,18 +339,18 @@ uebersicht_text_fr <- paste0("<b>",vorlagen_fr$text[i],"</b><br>",
                              results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2), " non")
 uebersicht_text_fr <- gsub("NA","0",uebersicht_text_fr) 
 
-uebersicht_text_it <- paste0("<b>",vorlagen_fr$text[i],"</b><br>",
+uebersicht_text_it <- paste0("<b>",vorlagen_it$text[i],"</b><br>",
                              "Cantoni: ",results_national$jaStaendeGanz+(results_national$jaStaendeHalb/2)," sì, ",
                              results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2), " no")
 uebersicht_text_it <- gsub("NA","0",uebersicht_text_it) 
 
-Ja_Anteil <- round(results_national$jaStimmenInProzent,1)
-Nein_Anteil <- round(100-results_national$jaStimmenInProzent,1)  
+Ja_Anteil <- round2(results_national$jaStimmenInProzent,1)
+Nein_Anteil <- round2(100-results_national$jaStimmenInProzent,1)  
 } else if (sum(results$Gebiet_Ausgezaehlt) > 0 ) {  
 
 uebersicht_text_de <- paste0("<b>",vorlagen$text[i],"</b><br>",
                           sum(results$Gebiet_Ausgezaehlt)," von ",nrow(results)," Gemeinden ausgezählt (",
-                          round((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
+                          round2((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
                           "%)<br>",
                           "Stände: ",results_national$jaStaendeGanz+(results_national$jaStaendeHalb/2)," Ja, ",
                           results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2), " Nein")
@@ -356,7 +358,7 @@ uebersicht_text_de <- gsub("NA","0",uebersicht_text_de)
 
 uebersicht_text_fr <- paste0("<b>",vorlagen_fr$text[i],"</b><br>Les résultats de ",
                              sum(results$Gebiet_Ausgezaehlt)," des ",nrow(results)," communes sont connus (",
-                             round((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
+                             round2((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
                              "%)<br>",
                              "Cantons: ",results_national$jaStaendeGanz+(results_national$jaStaendeHalb/2)," oui, ",
                              results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2), " non")
@@ -364,14 +366,14 @@ uebersicht_text_fr <- gsub("NA","0",uebersicht_text_fr)
 
 uebersicht_text_it <- paste0("<b>",vorlagen_it$text[i],"</b><br>",
                              sum(results$Gebiet_Ausgezaehlt)," dei ",nrow(results)," comuni sono noti (",
-                             round((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
+                             round2((sum(results$Gebiet_Ausgezaehlt)*100)/nrow(results),1),
                              "%)<br>",
                              "Cantoni: ",results_national$jaStaendeGanz+(results_national$jaStaendeHalb/2)," sì, ",
                              results_national$neinStaendeGanz+(results_national$neinStaendeHalb/2), " no")
 uebersicht_text_it <- gsub("NA","0",uebersicht_text_it) 
 
-Ja_Anteil <- round(results_national$jaStimmenInProzent,1)
-Nein_Anteil <- round(100-results_national$jaStimmenInProzent,1)
+Ja_Anteil <- round2(results_national$jaStimmenInProzent,1)
+Nein_Anteil <- round2(100-results_national$jaStimmenInProzent,1)
 
 }
 

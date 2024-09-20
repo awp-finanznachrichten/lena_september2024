@@ -135,45 +135,45 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short[k],"_texte.xlsx"),row.names = 
 
     if (is.na(Ja_Stimmen_Kanton) == FALSE) {
       undertitel_de <- paste0("Die brieflichen Stimmen sind ausgezählt.<br>Stand: <b>",
-                              round(Ja_Stimmen_Kanton,1)," %</b> Ja, <b>",
-                              round(100-Ja_Stimmen_Kanton,1)," %</b> Nein")
+                              round2(Ja_Stimmen_Kanton,1)," %</b> Ja, <b>",
+                              round2(100-Ja_Stimmen_Kanton,1)," %</b> Nein")
       
       undertitel_fr <- paste0("Les votes par correspondance ont été dépouillés.<br>Etat: <b>",
-                              round(Ja_Stimmen_Kanton,1)," %</b> oui, <b>",
-                              round(100-Ja_Stimmen_Kanton,1)," %</b> non")
+                              round2(Ja_Stimmen_Kanton,1)," %</b> oui, <b>",
+                              round2(100-Ja_Stimmen_Kanton,1)," %</b> non")
       
       undertitel_it <- paste0("I voti per corrispondenza sono stati scrutinati.<br>Stato: <b>",
-                              round(Ja_Stimmen_Kanton,1)," %</b> sì, <b>",
-                              round(100-Ja_Stimmen_Kanton,1)," %</b> no")
+                              round2(Ja_Stimmen_Kanton,1)," %</b> sì, <b>",
+                              round2(100-Ja_Stimmen_Kanton,1)," %</b> no")
       
     
       if (nrow(results_notavailable) == 0) {
       undertitel_de <- paste0("Resultat: <b>",
-                                round(Ja_Stimmen_Kanton,1)," %</b> Ja, <b>",
-                                round(100-Ja_Stimmen_Kanton,1)," %</b> Nein")
+                                round2(Ja_Stimmen_Kanton,1)," %</b> Ja, <b>",
+                                round2(100-Ja_Stimmen_Kanton,1)," %</b> Nein")
         
       undertitel_fr <- paste0("Résultats: <b>",
-                                round(Ja_Stimmen_Kanton,1)," %</b> oui, <b>",
-                                round(100-Ja_Stimmen_Kanton,1)," %</b> non")
+                                round2(Ja_Stimmen_Kanton,1)," %</b> oui, <b>",
+                                round2(100-Ja_Stimmen_Kanton,1)," %</b> non")
         
       undertitel_it <- paste0("Risultati: <b>",
-                                round(Ja_Stimmen_Kanton,1)," %</b> sì, <b>",
-                                round(100-Ja_Stimmen_Kanton,1)," %</b> no")
+                                round2(Ja_Stimmen_Kanton,1)," %</b> sì, <b>",
+                                round2(100-Ja_Stimmen_Kanton,1)," %</b> no")
       } else if (sum(results$Gebiet_Ausgezaehlt) > 0 ) {
       undertitel_de <- paste0("Es sind <b>",sum(results$Gebiet_Ausgezaehlt),"</b> von <b>",nrow(results),
                               "</b> Gemeinden ausgezählt.<br>Stand: <b>",
-                              round(Ja_Stimmen_Kanton,1)," %</b> Ja, <b>",
-                              round(100-Ja_Stimmen_Kanton,1)," %</b> Nein")
+                              round2(Ja_Stimmen_Kanton,1)," %</b> Ja, <b>",
+                              round2(100-Ja_Stimmen_Kanton,1)," %</b> Nein")
       
       undertitel_fr <- paste0("Les résultats de <b>",sum(results$Gebiet_Ausgezaehlt),"</b> des <b>",nrow(results),
                               "</b> communes sont connus.<br>Etat: <b>",
-                              round(Ja_Stimmen_Kanton,1)," %</b> oui, <b>",
-                              round(100-Ja_Stimmen_Kanton,1)," %</b> non")
+                              round2(Ja_Stimmen_Kanton,1)," %</b> oui, <b>",
+                              round2(100-Ja_Stimmen_Kanton,1)," %</b> non")
       
       undertitel_it <- paste0("I risultati di <b>",sum(results$Gebiet_Ausgezaehlt),"</b> dei <b>",nrow(results),
                               "</b> comuni sono noti.<br>Stato: <b>",
-                              round(Ja_Stimmen_Kanton,1)," %</b> sì, <b>",
-                              round(100-Ja_Stimmen_Kanton,1)," %</b> no")
+                              round2(Ja_Stimmen_Kanton,1)," %</b> sì, <b>",
+                              round2(100-Ja_Stimmen_Kanton,1)," %</b> no")
       
     } 
     }

@@ -273,74 +273,74 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"),row.
       undertitel_overview_de <- paste0("Die brieflichen Stimmen sind ausgezählt." )
       
       undertitel_initiative_de <- paste0("Die brieflichen Stimmen sind ausgezählt.<br>Stand Initiative: <b>",
-                              round(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
-                              round(100-results_kantonal_special_initiative,1)," %</b> Nein")
+                              round2(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
+                              round2(100-results_kantonal_special_initiative,1)," %</b> Nein")
       
       undertitel_gegenvorschlag_de <- paste0("Die brieflichen Stimmen sind ausgezählt.<br>Stand Gegenvorschlag: <b>",
-                              round(results_kantonal_special_gegenvorschlag,1)," %</b> Ja, <b>",
-                              round(100-results_kantonal_special_gegenvorschlag,1)," %</b> Nein")
+                              round2(results_kantonal_special_gegenvorschlag,1)," %</b> Ja, <b>",
+                              round2(100-results_kantonal_special_gegenvorschlag,1)," %</b> Nein")
       
       undertitel_stichentscheid_de <- paste0("Die brieflichen Stimmen sind ausgezählt.<br>Stand Stichentscheid: <b>",
-                                             round(results_kantonal_special_stichentscheid,1)," %</b> Initiative, <b>",
-                                             round(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag")
+                                             round2(results_kantonal_special_stichentscheid,1)," %</b> Initiative, <b>",
+                                             round2(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag")
       
       undertitel_overview_fr <- paste0("Les votes par correspondance ont été dépouillés")
       
       undertitel_initiative_fr <- paste0("Les votes par correspondance ont été dépouillés.<br>Etat initiative: <b>",
-                                         round(results_kantonal_special_initiative,1)," %</b> oui, <b>",
-                                         round(100-results_kantonal_special_initiative,1)," %</b> non")
+                                         round2(results_kantonal_special_initiative,1)," %</b> oui, <b>",
+                                         round2(100-results_kantonal_special_initiative,1)," %</b> non")
       
       undertitel_gegenvorschlag_fr <- paste0("Les votes par correspondance ont été dépouillés.<br>Etat contre-proposition: <b>",
-                                             round(results_kantonal_special_gegenvorschlag,1)," %</b> oui, <b>",
-                                             round(100-results_kantonal_special_gegenvorschlag,1)," %</b> non")
+                                             round2(results_kantonal_special_gegenvorschlag,1)," %</b> oui, <b>",
+                                             round2(100-results_kantonal_special_gegenvorschlag,1)," %</b> non")
       
       undertitel_stichentscheid_fr <- paste0("Les votes par correspondance ont été dépouillés.<br>Etat question subsidiaire: <b>",
-                                             round(results_kantonal_special_stichentscheid,1)," %</b> initiative, <b>",
-                                             round(100-results_kantonal_special_stichentscheid,1)," %</b> contre-proposition")
+                                             round2(results_kantonal_special_stichentscheid,1)," %</b> initiative, <b>",
+                                             round2(100-results_kantonal_special_stichentscheid,1)," %</b> contre-proposition")
       
       if (nrow(results_notavailable) == 0) {
         
         undertitel_overview_de <-  paste0("Resultat Initiative: <b>",
-                                                                round(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
-                                                                round(100-results_kantonal_special_initiative,1)," %</b> Nein<br>",
+                                                                round2(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
+                                                                round2(100-results_kantonal_special_initiative,1)," %</b> Nein<br>",
                                                                 "Resultat Gegenvorschlag: <b>",
-                                                                round(results_kantonal_special_gegenvorschlag,1)," %</b> Ja, <b>",
-                                                                round(100-results_kantonal_special_gegenvorschlag,1)," %</b> Nein<br>",
+                                                                round2(results_kantonal_special_gegenvorschlag,1)," %</b> Ja, <b>",
+                                                                round2(100-results_kantonal_special_gegenvorschlag,1)," %</b> Nein<br>",
                                                                 "Resultat Stichentscheid: <b>",
-                                                                round(results_kantonal_special_stichentscheid,1)," %</b> Initiative, <b>",
-                                                                round(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag"
+                                                                round2(results_kantonal_special_stichentscheid,1)," %</b> Initiative, <b>",
+                                                                round2(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag"
         )
         
         undertitel_initiative_de <- paste0("Resultat Initiative: <b>",
-                                           round(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
-                                           round(100-results_kantonal_special_initiative,1)," %</b> Nein")
+                                           round2(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
+                                           round2(100-results_kantonal_special_initiative,1)," %</b> Nein")
         undertitel_gegenvorschlag_de <- paste0("Resultat Gegenvorschlag: <b>",
-                                               round(results_kantonal_special_gegenvorschlag,1)," %</b> Ja, <b>",
-                                               round(100-results_kantonal_special_gegenvorschlag,1)," %</b> Nein")
+                                               round2(results_kantonal_special_gegenvorschlag,1)," %</b> Ja, <b>",
+                                               round2(100-results_kantonal_special_gegenvorschlag,1)," %</b> Nein")
         undertitel_stichentscheid_de<- paste0("Resultat Stichentscheid: <b>",
-                                              round(results_kantonal_special_stichentscheid,1)," %</b> Initiative, <b>",
-                                              round(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag")
+                                              round2(results_kantonal_special_stichentscheid,1)," %</b> Initiative, <b>",
+                                              round2(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag")
         
         undertitel_overview_fr <- paste0("Résultats initiative: <b>",
-                                         round(results_kantonal_special_initiative,1)," %</b> oui, <b>",
-                                         round(100-results_kantonal_special_initiative,1)," %</b> non<br>",
+                                         round2(results_kantonal_special_initiative,1)," %</b> oui, <b>",
+                                         round2(100-results_kantonal_special_initiative,1)," %</b> non<br>",
                                          "Résultats contre-proposition: <b>",
-                                         round(results_kantonal_special_gegenvorschlag,1)," %</b> oui, <b>",
-                                         round(100-results_kantonal_special_gegenvorschlag,1)," %</b> non<br>",
+                                         round2(results_kantonal_special_gegenvorschlag,1)," %</b> oui, <b>",
+                                         round2(100-results_kantonal_special_gegenvorschlag,1)," %</b> non<br>",
                                          "Résultats question subsidiaire: <b>",
-                                         round(results_kantonal_special_stichentscheid,1)," %</b> initiative, <b>",
-                                         round(100-results_kantonal_special_stichentscheid,1)," %</b> contre-proposition"
+                                         round2(results_kantonal_special_stichentscheid,1)," %</b> initiative, <b>",
+                                         round2(100-results_kantonal_special_stichentscheid,1)," %</b> contre-proposition"
         )
         
         undertitel_initiative_fr <- paste0("Résultats initiative: <b>",
-                                           round(results_kantonal_special_initiative,1)," %</b> oui, <b>",
-                                           round(100-results_kantonal_special_initiative,1)," %</b> non")
+                                           round2(results_kantonal_special_initiative,1)," %</b> oui, <b>",
+                                           round2(100-results_kantonal_special_initiative,1)," %</b> non")
         undertitel_gegenvorschlag_fr <- paste0("Résultats contre-proposition: <b>",
-                                               round(results_kantonal_special_gegenvorschlag,1)," %</b> oui, <b>",
-                                               round(100-results_kantonal_special_gegenvorschlag,1)," %</b> non")
+                                               round2(results_kantonal_special_gegenvorschlag,1)," %</b> oui, <b>",
+                                               round2(100-results_kantonal_special_gegenvorschlag,1)," %</b> non")
         uundertitel_stichentscheid_fr <- paste0("Résultats question subsidiaire: <b>",
-                                                round(results_kantonal_special_stichentscheid,1)," %</b> initiative, <b>",
-                                                round(100-results_kantonal_special_stichentscheid,1)," %</b> contre-proposition")
+                                                round2(results_kantonal_special_stichentscheid,1)," %</b> initiative, <b>",
+                                                round2(100-results_kantonal_special_stichentscheid,1)," %</b> contre-proposition")
         
       } else if  (sum(results$Gebiet_Ausgezaehlt) > 0 ) {
         
@@ -349,32 +349,32 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"),row.
         
       undertitel_initiative_de <- paste0("Es sind <b>",sum(results$Gebiet_Ausgezaehlt),"</b> von <b>",nrow(results),
                               "</b> Gemeinden ausgezählt.<br>Stand Initiative: <b>",
-                              round(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
-                              round(100-results_kantonal_special_initiative,1)," %</b> Nein")
+                              round2(results_kantonal_special_initiative,1)," %</b> Ja, <b>",
+                              round2(100-results_kantonal_special_initiative,1)," %</b> Nein")
       undertitel_gegenvorschlag_de <- paste0("Es sind <b>",sum(results$Gebiet_Ausgezaehlt),"</b> von <b>",nrow(results),
                                          "</b> Gemeinden ausgezählt.<br>Stand Gegenvorschlag: <b>",
-                                         round(results_kantonal_special_gegenvorschlag,1)," %</b> Ja, <b>",
-                                         round(100-results_kantonal_special_gegenvorschlag,1)," %</b> Nein")
+                                         round2(results_kantonal_special_gegenvorschlag,1)," %</b> Ja, <b>",
+                                         round2(100-results_kantonal_special_gegenvorschlag,1)," %</b> Nein")
       undertitel_stichentscheid_de<- paste0("Es sind <b>",sum(results$Gebiet_Ausgezaehlt),"</b> von <b>",nrow(results),
                                          "</b> Gemeinden ausgezählt.<br>Stand Stichentscheid: <b>",
-                                         round(results_kantonal_special_stichentscheid,1)," %</b> Initiative, <b>",
-                                         round(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag")
+                                         round2(results_kantonal_special_stichentscheid,1)," %</b> Initiative, <b>",
+                                         round2(100-results_kantonal_special_stichentscheid,1)," %</b> Gegenvorschlag")
       
       undertitel_overview_fr <- paste0("Les résultats de <b>",sum(results$Gebiet_Ausgezaehlt),"</b> des <b>",nrow(results),
                                          "</b> communes sont connus.")
       
       undertitel_initiative_fr <- paste0("Les résultats de <b>",sum(results$Gebiet_Ausgezaehlt),"</b> des <b>",nrow(results),
                               "</b> communes sont connus.<br>Etat initiative: <b>",
-                              round(results_kantonal_special_initiative,1)," %</b> oui, <b>",
-                              round(100-results_kantonal_special_initiative,1)," %</b> non")
+                              round2(results_kantonal_special_initiative,1)," %</b> oui, <b>",
+                              round2(100-results_kantonal_special_initiative,1)," %</b> non")
       undertitel_gegenvorschlag_fr <- paste0("Les résultats de <b>",sum(results$Gebiet_Ausgezaehlt),"</b> des <b>",nrow(results),
                               "</b> communes sont connus.<br>Etat contre-proposition: <b>",
-                              round(results_kantonal_special_gegenvorschlag,1)," %</b> oui, <b>",
-                              round(100-results_kantonal_special_gegenvorschlag,1)," %</b> non")
+                              round2(results_kantonal_special_gegenvorschlag,1)," %</b> oui, <b>",
+                              round2(100-results_kantonal_special_gegenvorschlag,1)," %</b> non")
       uundertitel_stichentscheid_fr <- paste0("Les résultats de <b>",sum(results$Gebiet_Ausgezaehlt),"</b> des <b>",nrow(results),
                               "</b> communes sont connus.<br>Etat question subsidiaire: <b>",
-                              round(results_kantonal_special_stichentscheid,1)," %</b> initiative, <b>",
-                              round(100-results_kantonal_special_stichentscheid,1)," %</b> contre-proposition")
+                              round2(results_kantonal_special_stichentscheid,1)," %</b> initiative, <b>",
+                              round2(100-results_kantonal_special_stichentscheid,1)," %</b> contre-proposition")
     }
 #    if (kantonal_short_special[s] == "VS_Verfassung") {
 #      undertitel_de <- gsub("Initiative","Entwurf",undertitel_de)
@@ -411,20 +411,20 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"),row.
         dw_edit_chart(datawrapper_codes_vorlage_overview[r,5],
                       intro=paste0(undertitel_overview_de,'<br>
 <span style="line-height:30px">
-  <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Übersicht&nbsp;&nbsp;</a> &nbsp;
-  <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Initiative&nbsp;&nbsp;</a> &nbsp;
-                                     <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Gegenvorschlag</a> &nbsp;
-                                   <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Stichentscheid</a> &nbsp;'),
+  <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background2:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Übersicht&nbsp;&nbsp;</a> &nbsp;
+  <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Initiative&nbsp;&nbsp;</a> &nbsp;
+                                     <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Gegenvorschlag</a> &nbsp;
+                                   <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Stichentscheid</a> &nbsp;'),
                       annotate=paste0("Letzte Aktualisierung: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
         dw_publish_chart(datawrapper_codes_vorlage_overview[r,5])
       } else {
         dw_edit_chart(datawrapper_codes_vorlage_overview[r,5],
                       intro=paste0(undertitel_overview_fr,'<br>
 <span style="line-height:30px">
-<a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;aperçu&nbsp;&nbsp;</a> &nbsp;
-  <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;initiative&nbsp;&nbsp;</a> &nbsp;
-                                     <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> contre-proposition</a> &nbsp;
-                                   <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> question subsidiaire</a> &nbsp;'),
+<a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background2:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;aperçu&nbsp;&nbsp;</a> &nbsp;
+  <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;initiative&nbsp;&nbsp;</a> &nbsp;
+                                     <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> contre-proposition</a> &nbsp;
+                                   <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> question subsidiaire</a> &nbsp;'),
                       annotate=paste0("dernière mise à jour: ",format(Sys.time(),"%d.%m.%Y %Hh%M")))
         dw_publish_chart(datawrapper_codes_vorlage_overview[r,5])
       }
@@ -437,20 +437,20 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"),row.
         dw_edit_chart(datawrapper_codes_vorlage_initiative[r,5],
                       intro=paste0(undertitel_initiative_de,'<br>
 <span style="line-height:30px">
-<a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Übersicht&nbsp;&nbsp;</a> &nbsp;
-  <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Initiative&nbsp;&nbsp;</a> &nbsp;
-                                     <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Gegenvorschlag</a> &nbsp;
-                                   <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Stichentscheid</a> &nbsp;'),
+<a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Übersicht&nbsp;&nbsp;</a> &nbsp;
+  <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background2:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Initiative&nbsp;&nbsp;</a> &nbsp;
+                                     <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Gegenvorschlag</a> &nbsp;
+                                   <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Stichentscheid</a> &nbsp;'),
                       annotate=paste0("Letzte Aktualisierung: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
         dw_publish_chart(datawrapper_codes_vorlage_initiative[r,5])
       } else {
         dw_edit_chart(datawrapper_codes_vorlage_initiative[r,5],
                       intro=paste0(undertitel_initiative_fr,'<br>
 <span style="line-height:30px">
-<a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;aperçu&nbsp;&nbsp;</a> &nbsp;
-  <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;initiative&nbsp;&nbsp;</a> &nbsp;
-                                     <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> contre-proposition</a> &nbsp;
-                                   <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> question subsidiaire</a> &nbsp;'),
+<a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;aperçu&nbsp;&nbsp;</a> &nbsp;
+  <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background2:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;initiative&nbsp;&nbsp;</a> &nbsp;
+                                     <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> contre-proposition</a> &nbsp;
+                                   <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> question subsidiaire</a> &nbsp;'),
                       annotate=paste0("dernière mise à jour: ",format(Sys.time(),"%d.%m.%Y %Hh%M")))
         dw_publish_chart(datawrapper_codes_vorlage_initiative[r,5])
       }
@@ -461,20 +461,20 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"),row.
         dw_edit_chart(datawrapper_codes_vorlage_gegenvorschlag[r,5],
                       intro=paste0(undertitel_gegenvorschlag_de,'<br>
                         <span style="line-height:30px">
-                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Übersicht&nbsp;&nbsp;</a> &nbsp;
-                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Initiative&nbsp;&nbsp;</a> &nbsp;
-                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Gegenvorschlag</a> &nbsp;
-                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Stichentscheid</a> &nbsp;'),
+                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Übersicht&nbsp;&nbsp;</a> &nbsp;
+                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Initiative&nbsp;&nbsp;</a> &nbsp;
+                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background2:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Gegenvorschlag</a> &nbsp;
+                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Stichentscheid</a> &nbsp;'),
                       annotate=paste0("Letzte Aktualisierung: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
         dw_publish_chart(datawrapper_codes_vorlage_gegenvorschlag[r,5])
       } else {
         dw_edit_chart(datawrapper_codes_vorlage_gegenvorschlag[r,5],
                       intro=paste0(undertitel_gegenvorschlag_fr,'<br>
                         <span style="line-height:30px">
-                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;aperçu&nbsp;&nbsp;</a> &nbsp;
-                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;initiative&nbsp;&nbsp;</a> &nbsp;
-                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> contre-proposition</a> &nbsp;
-                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> question subsidiaire</a> &nbsp;'),
+                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;aperçu&nbsp;&nbsp;</a> &nbsp;
+                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;initiative&nbsp;&nbsp;</a> &nbsp;
+                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background2:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> contre-proposition</a> &nbsp;
+                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> question subsidiaire</a> &nbsp;'),
                       annotate=paste0("dernière mise à jour: ",format(Sys.time(),"%d.%m.%Y %Hh%M")))
         dw_publish_chart(datawrapper_codes_vorlage_gegenvorschlag[r,5])
       }
@@ -485,20 +485,20 @@ write.xlsx(texts,paste0("./Texte/",kantonal_short_special[s],"_texte.xlsx"),row.
         dw_edit_chart(datawrapper_codes_vorlage_stichentscheid[r,5],
                       intro=paste0(undertitel_stichentscheid_de,'<br>
                         <span style="line-height:30px">
-                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Übersicht&nbsp;&nbsp;</a> &nbsp;
-                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Initiative&nbsp;&nbsp;</a> &nbsp;
-                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Gegenvorschlag</a> &nbsp;
-                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Stichentscheid</a> &nbsp;'),
+                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Übersicht&nbsp;&nbsp;</a> &nbsp;
+                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;Initiative&nbsp;&nbsp;</a> &nbsp;
+                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Gegenvorschlag</a> &nbsp;
+                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background2:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> Stichentscheid</a> &nbsp;'),
                       annotate=paste0("Letzte Aktualisierung: ",format(Sys.time(),"%d.%m.%Y %H:%M Uhr")))
         dw_publish_chart(datawrapper_codes_vorlage_stichentscheid[r,5])
       } else {
         dw_edit_chart(datawrapper_codes_vorlage_stichentscheid[r,5],
                       intro=paste0(undertitel_stichentscheid_fr,'<br>
                         <span style="line-height:30px">
-                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;aperçu&nbsp;&nbsp;</a> &nbsp;
-                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;initiative&nbsp;&nbsp;</a> &nbsp;
-                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> contre-proposition</a> &nbsp;
-                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> question subsidiaire<</a> &nbsp;'),
+                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_overview[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;aperçu&nbsp;&nbsp;</a> &nbsp;
+                        <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_initiative[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer">&nbsp;&nbsp;initiative&nbsp;&nbsp;</a> &nbsp;
+                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_gegenvorschlag[r,5],'/" style="background2:#808080; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> contre-proposition</a> &nbsp;
+                      <a target="_self" href="https://datawrapper.dwcdn.net/',datawrapper_codes_vorlage_stichentscheid[r,5],'/" style="background2:#429ddd; padding:4px 6px; border-radius:5px; color:#ffffff; font-weight:400; box-shadow:0px 0px 7px 2px rgba(0,0,0,0.07); cursor:pointer;" rel="nofollow noopener noreferrer"> question subsidiaire<</a> &nbsp;'),
                       annotate=paste0("dernière mise à jour: ",format(Sys.time(),"%d.%m.%Y %Hh%M")))
         dw_publish_chart(datawrapper_codes_vorlage_stichentscheid[r,5])
       }
