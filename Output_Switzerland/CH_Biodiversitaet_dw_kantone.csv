@@ -1,5 +1,5 @@
 "Kantons_Nr","Kanton_d","Kanton_f","Kanton_i","Ja_Stimmen_In_Prozent_Kanton","Nein_Stimmen_In_Prozent_Kanton","Kanton_color","Gemeinden_overall","Gemeinden_counted","Legende","Text_de","Text_fr","Text_it"
-1,"Zürich","Zurich","Zurigo",36.5,63.5,0,160,158,"158/160","Es sind <b>158 von 160</b> Gemeinden ausgezählt.","Le résultats de <b>158 des 160 communes sont connus.","I risultati di <b>158 dei 160 comuni sono noti."
+1,"Zürich","Zurich","Zurigo",37.5,62.5,0,160,158,"158/160","Es sind <b>158 von 160</b> Gemeinden ausgezählt.","Le résultats de <b>158 des 160 communes sont connus.","I risultati di <b>158 dei 160 comuni sono noti."
 2,"Bern","Berne","Berna",29.6,70.4,0,330,162,"162/330","Es sind <b>162 von 330</b> Gemeinden ausgezählt.","Le résultats de <b>162 des 330 communes sont connus.","I risultati di <b>162 dei 330 comuni sono noti."
 3,"Luzern","Lucerne","Lucerna",30.7,69.3,30.7,80,80,,"Es sind alle Gemeinden ausgezählt.","Les résultats de toutes les communes sont connus.","Tutti i comuni sono noti."
 4,"Uri","Uri","Uri",24.5,75.5,24.5,19,19,,"Es sind alle Gemeinden ausgezählt.","Les résultats de toutes les communes sont connus.","Tutti i comuni sono noti."
@@ -24,4 +24,4 @@
 23,"Wallis","Valais","Vallese",26.1,73.9,26.1,122,122,,"Es sind alle Gemeinden ausgezählt.","Les résultats de toutes les communes sont connus.","Tutti i comuni sono noti."
 24,"Neuenburg","Neuchâtel","Neuchâtel",43.8,56.2,43.8,27,27,,"Es sind alle Gemeinden ausgezählt.","Les résultats de toutes les communes sont connus.","Tutti i comuni sono noti."
 25,"Genf","Genève","Ginevra",50.5,49.5,100,45,0,"0/45","Die brieflichen Stimmen sind ausgezählt.","Les votes par correspondance ont été dépouillés.","I voti per corrispondenza sono stati scrutinati."
-26,"Jura","Jura","Giura",32.8,67.2,0,50,45,"45/50","Es sind <b>45 von 50</b> Gemeinden ausgezählt.","Le résultats de <b>45 des 50 communes sont connus.","I risultati di <b>45 dei 50 comuni sono noti."
+26,"Jura","Jura","Giura",35.2,64.8,35.2,50,50,,"Es sind alle Gemeinden ausgezählt.","Les résultats de toutes les communes sont connus.","Tutti i comuni sono noti."
