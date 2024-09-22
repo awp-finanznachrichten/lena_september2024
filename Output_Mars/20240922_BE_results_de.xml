@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<newsMessage xmlns="http://iptc.org/std/nar/2006-10-01/">
+  <header>
+    <sent>2024-09-22T15:12:00+02:00</sent>
+  </header>
+
+  <itemSet>
+    <newsItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://iptc.org/std/nar/2006-10-01/" standard="NewsML-G2" standardversion="2.28" conformance="power" xml:lang="de" guid="urn:newsml:keystone-sda.ch:20240922:20240922151200334470827254547" version="1">
+      <catalogRef href="http://www.iptc.org/std/catalog/catalog.IPTC-G2-Standards_34.xml"/>
+      <catalogRef href="http://www.keystone-sda.ch/NewsML_G2/SDA-G2-Catalog.xml"/>
+
+      <itemMeta>
+        <itemClass qcode="ninat:text"/>
+        <provider qcode="nprov:KSDA">
+           <name>sda</name>
+        </provider>
+        <versionCreated>2024-09-22T15:12:00+02:00</versionCreated>
+        <pubStatus qcode="stat:withheld"/>
+        <generator versioninfo="0.3.4">XML::NewsML_G2</generator>
+        <service qcode="sdasvc:bsd"></service>
+        <edNote role="sdanote:note">DIES IST EIN TEST</edNote>
+        <edNote role="sdalena:memo">DIES IST EIN TEST</edNote>
+        
+      </itemMeta>
+
+      <contentMeta>
+        <urgency>2</urgency>
+        <contentCreated>2024-09-22T15:12:00+02:00</contentCreated>
+        <creator>
+          <name>sda-robot</name>
+        </creator>
+        <altId>334470827254547</altId>
+        <dateline>Bern</dateline>
+        <language tag="de"/>
+        <genre qcode="sdagenre:RES">
+        </genre>
+
+        <!--storytypes-->
+        <subject type="cpnat:abstract" qcode="sdastorytype:tble"></subject>
+        
+        <!--media topics-->
+        <subject type="cpnat:abstract" qcode="sdamarschannel:POL"></subject>
+<subject type="cpnat:abstract" qcode="sdamarschannel:VOT"></subject>
+
+        <!--locations-->
+        <located type="loctype:city" qcode="sdamarsgeo:BRN">
+<name>Bern</name>
+</located>
+  
+        <slugline>vot BE</slugline>
+        <headline>***TEST***Ergebnisse aus dem Kanton Bern</headline>
+        <description role="drol:teaser"> </description>
+        <description role="drol:catchline"></description>
+      </contentMeta>
+
+      <contentSet>
+        <inlineXML contenttype="application/xhtml+xml">
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+              <title>***TEST***Ergebnisse aus dem Kanton Bern</title>
+            </head>
+            <body>
+              <p class="lead"> </p>
+              <p class="paragraph">Biodiversitätsinitiative: NEIN</p>
+<table><tbody>
+<tr><td>Ja-Anteil: 38,26 Prozent (132'305 Stimmen)</td></tr>
+<tr><td>Nein-Anteil: 61,74 Prozent (213'524 Stimmen)</td></tr>
+<tr><td>Stimmbeteiligung: 46,53 Prozent</td></tr>
+<tr><td></td></tr>
+<tr><td>Stände: 0,5 Ja, 20,5 Nein (am Ständemehr gescheitert)</td></tr>
+<tr><td>Ja-Kantone: BS</td></tr>
+<tr><td>Nein-Kantone: AG, AI, AR, BE, BL, FR, GL, GR, JU, LU, NE, NW, OW, SG, SH, SO, SZ, TG, TI, UR, VD, VS, ZG</td></tr>
+<tr><td>SRG-Hochrechnung um 12:58 Uhr: 37 Prozent Ja, 63 Prozent Nein</td></tr>
+</tbody></table>
+<p class="paragraph">Reform der beruflichen Vorsorge: NEIN</p>
+<table><tbody>
+<tr><td>Ja-Anteil: 30,81 Prozent (104'405 Stimmen)</td></tr>
+<tr><td>Nein-Anteil: 69,19 Prozent (234'487 Stimmen)</td></tr>
+<tr><td>Stimmbeteiligung: 46,53 Prozent</td></tr>
+<tr><td></td></tr>
+<tr><td>Stände: 0 Ja, 21 Nein (am Ständemehr gescheitert)</td></tr>
+<tr><td>Ja-Kantone: -</td></tr>
+<tr><td>Nein-Kantone: AG, AI, AR, BE, BL, BS, FR, GL, GR, JU, LU, NE, NW, OW, SG, SH, SO, SZ, TG, TI, UR, VD, VS, ZG</td></tr>
+<tr><td>SRG-Hochrechnung um 13:08 Uhr: 32 Prozent Ja, 68 Prozent Nein</td></tr>
+</tbody></table>
+
+            </body>
+          </html>
+        </inlineXML>
+      </contentSet>
+    </newsItem>
+  </itemSet>
+</newsMessage>
