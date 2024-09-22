@@ -1,46 +1,46 @@
 "ID","Gemeinde_color","Ja_Stimmen_In_Prozent","Nein_Stimmen_In_Prozent","Gemeinde_de","Text_de"
-6601,50,0,0,"Aire-la-Ville GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6602,50,0,0,"Anières GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6603,50,0,0,"Avully GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6604,50,0,0,"Avusy GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6605,50,0,0,"Bardonnex GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6606,50,0,0,"Bellevue GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6607,50,0,0,"Bernex GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6608,50,0,0,"Carouge GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6609,50,0,0,"Cartigny GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6610,50,0,0,"Céligny GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6611,50,0,0,"Chancy GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6612,50,0,0,"Chêne-Bougeries GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6613,50,0,0,"Chêne-Bourg GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6614,50,0,0,"Choulex GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6615,50,0,0,"Collex-Bossy GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6616,50,0,0,"Collonge-Bellerive GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6617,50,0,0,"Cologny GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6618,50,0,0,"Confignon GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6619,50,0,0,"Corsier GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6620,50,0,0,"Dardagny GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6621,50,0,0,"Genf GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6622,50,0,0,"Genthod GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6623,50,0,0,"Le Grand-Saconnex GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6624,50,0,0,"Gy GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6625,50,0,0,"Hermance GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6626,50,0,0,"Jussy GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6627,50,0,0,"Laconnex GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6628,50,0,0,"Lancy GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6629,50,0,0,"Meinier GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6630,50,0,0,"Meyrin GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6631,50,0,0,"Onex GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6632,50,0,0,"Perly-Certoux GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6633,50,0,0,"Plan-les-Ouates GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6634,50,0,0,"Pregny-Chambésy GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6635,50,0,0,"Presinge GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6636,50,0,0,"Puplinge GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6637,50,0,0,"Russin GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6638,50,0,0,"Satigny GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6639,50,0,0,"Soral GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6640,50,0,0,"Thônex GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6641,50,0,0,"Troinex GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6642,50,0,0,"Vandoeuvres GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6643,50,0,0,"Vernier GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6644,50,0,0,"Versoix GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
-6645,50,0,0,"Veyrier GE","Die Resultate dieser Gemeinde sind noch nicht bekannt."
+6601,46.9,46.9,53.1,"Aire-la-Ville GE",
+6602,65.7,65.7,34.3,"Anières GE",
+6603,32.7,32.7,67.3,"Avully GE",
+6604,47.9,47.9,52.1,"Avusy GE",
+6605,47.7,47.7,52.3,"Bardonnex GE",
+6606,46.4,46.4,53.6,"Bellevue GE",
+6607,41.5,41.5,58.5,"Bernex GE",
+6608,36,36,64,"Carouge GE",
+6609,46.8,46.8,53.2,"Cartigny GE",
+6610,47.6,47.6,52.4,"Céligny GE",
+6611,33.3,33.3,66.7,"Chancy GE",
+6612,55.4,55.4,44.6,"Chêne-Bougeries GE",
+6613,37.8,37.8,62.2,"Chêne-Bourg GE",
+6614,53.8,53.8,46.2,"Choulex GE",
+6615,48.4,48.4,51.6,"Collex-Bossy GE",
+6616,66.1,66.1,33.9,"Collonge-Bellerive GE",
+6617,71,71,29,"Cologny GE",
+6618,41.7,41.7,58.3,"Confignon GE",
+6619,64.8,64.8,35.2,"Corsier GE",
+6620,44.8,44.8,55.2,"Dardagny GE",
+6621,36.6,36.6,63.4,"Genf GE",
+6622,49.5,49.5,50.5,"Genthod GE",
+6623,42.8,42.8,57.2,"Le Grand-Saconnex GE",
+6624,46.8,46.8,53.2,"Gy GE",
+6625,51.9,51.9,48.1,"Hermance GE",
+6626,58.8,58.8,41.2,"Jussy GE",
+6627,51.9,51.9,48.1,"Laconnex GE",
+6628,36.1,36.1,63.9,"Lancy GE",
+6629,47.9,47.9,52.1,"Meinier GE",
+6630,34.6,34.6,65.4,"Meyrin GE",
+6631,36,36,64,"Onex GE",
+6632,45.2,45.2,54.8,"Perly-Certoux GE",
+6633,43.9,43.9,56.1,"Plan-les-Ouates GE",
+6634,54.7,54.7,45.3,"Pregny-Chambésy GE",
+6635,49.8,49.8,50.2,"Presinge GE",
+6636,43.9,43.9,56.1,"Puplinge GE",
+6637,48.6,48.6,51.4,"Russin GE",
+6638,45.6,45.6,54.4,"Satigny GE",
+6639,44.9,44.9,55.1,"Soral GE",
+6640,45.9,45.9,54.1,"Thônex GE",
+6641,56.8,56.8,43.2,"Troinex GE",
+6642,69.5,69.5,30.5,"Vandoeuvres GE",
+6643,33.6,33.6,66.4,"Vernier GE",
+6644,43.7,43.7,56.3,"Versoix GE",
+6645,56.7,56.7,43.3,"Veyrier GE",
