@@ -34,7 +34,7 @@ source("./Vot-Tool/load_DBs.R", encoding = "UTF-8")
 for (i in 1:nrow(output_overview)) {
     canton_results <- cantons_results %>%
       filter(area_ID == output_overview$area_ID[i]) 
-    
+
     canton_metadata <- meta_kt %>%
       filter(area_ID == output_overview$area_ID[i])
 
