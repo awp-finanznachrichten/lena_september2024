@@ -1,6 +1,6 @@
 ###GET CURRENT RESULTS ###
 mydb <- connectDB(db_name="sda_votes")
-rs <- dbSendQuery(mydb, "SELECT * FROM cantons_results")
+rs <- dbSendQuery(mydb, "SELECT * FROM cantons_results WHERE votes_ID = '6710' OR votes_ID ='6720'")
 cantons_results <- DBI::fetch(rs,n=-1)
 dbDisconnectAll()
 
