@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<newsMessage xmlns="http://iptc.org/std/nar/2006-10-01/">
+  <header>
+    <sent>2024-09-22T13:50:09+02:00</sent>
+  </header>
+
+  <itemSet>
+    <newsItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://iptc.org/std/nar/2006-10-01/" standard="NewsML-G2" standardversion="2.28" conformance="power" xml:lang="de" guid="urn:newsml:keystone-sda.ch:20240922:20240922135009969319230669143" version="1">
+      <catalogRef href="http://www.iptc.org/std/catalog/catalog.IPTC-G2-Standards_34.xml"/>
+      <catalogRef href="http://www.keystone-sda.ch/NewsML_G2/SDA-G2-Catalog.xml"/>
+
+      <itemMeta>
+        <itemClass qcode="ninat:text"/>
+        <provider qcode="nprov:KSDA">
+           <name>sda</name>
+        </provider>
+        <versionCreated>2024-09-22T13:50:09+02:00</versionCreated>
+        <pubStatus qcode="stat:withheld"/>
+        <generator versioninfo="0.3.4">XML::NewsML_G2</generator>
+        <service qcode="sdasvc:bsd"></service>
+        <edNote role="sdanote:note">DIES IST EIN TEST</edNote>
+        <edNote role="sdalena:memo">DIES IST EIN TEST</edNote>
+        
+      </itemMeta>
+
+      <contentMeta>
+        <urgency>2</urgency>
+        <contentCreated>2024-09-22T13:50:09+02:00</contentCreated>
+        <creator>
+          <name>sda-robot</name>
+        </creator>
+        <altId>969319230669143</altId>
+        <dateline>Bern</dateline>
+        <language tag="de"/>
+        <genre qcode="sdagenre:RES">
+        </genre>
+
+        <!--storytypes-->
+        <subject type="cpnat:abstract" qcode="sdastorytype:tble"></subject>
+        
+        <!--media topics-->
+        <subject type="cpnat:abstract" qcode="sdamarschannel:POL"></subject>
+<subject type="cpnat:abstract" qcode="sdamarschannel:VOT"></subject>
+
+        <!--locations-->
+        <located type="loctype:city" qcode="sdamarsgeo:BRN">
+<name>Bern</name>
+</located>
+  
+        <slugline>vot Tabelle</slugline>
+        <headline>Reform der beruflichen Vorsorge: Zwischenstand</headline>
+        <description role="drol:teaser"> </description>
+        <description role="drol:catchline"></description>
+      </contentMeta>
+
+      <contentSet>
+        <inlineXML contenttype="application/xhtml+xml">
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+              <title>Reform der beruflichen Vorsorge: Zwischenstand</title>
+            </head>
+            <body>
+              <p class="lead"> </p>
+              <p class="paragraph">Reform der beruflichen Vorsorge</p>
+<table><tbody>
+<tr><td>Kanton</td><td>Ja</td><td>%</td><td>Nein</td><td>%</td><td>Bet. %</td></tr>
+<tr><td>Aargau</td><td>62471</td><td>33,00</td><td>126812</td><td>67,00</td><td>43,09</td></tr>
+<tr><td>Appenzell Innerrhoden</td><td>1942</td><td>36,09</td><td>3439</td><td>63,91</td><td>44,91</td></tr>
+<tr><td>Appenzell Ausserrhoden</td><td>6791</td><td>34,93</td><td>12653</td><td>65,07</td><td>50,60</td></tr>
+<tr><td>Freiburg</td><td>24618</td><td>26,34</td><td>68862</td><td>73,66</td><td>44,10</td></tr>
+<tr><td>Glarus</td><td>3691</td><td>32,53</td><td>7656</td><td>67,47</td><td>43,22</td></tr>
+<tr><td>Graubünden</td><td>22521</td><td>37,66</td><td>37273</td><td>62,34</td><td>43,35</td></tr>
+<tr><td>Luzern</td><td>50213</td><td>38,68</td><td>79591</td><td>61,32</td><td>46,21</td></tr>
+<tr><td>Neuenburg</td><td>10608</td><td>23,10</td><td>35320</td><td>76,90</td><td>40,94</td></tr>
+<tr><td>Nidwalden</td><td>6091</td><td>39,90</td><td>9174</td><td>60,10</td><td>48,75</td></tr>
+<tr><td>Obwalden</td><td>5070</td><td>37,32</td><td>8516</td><td>62,68</td><td>50,62</td></tr>
+<tr><td>Schaffhausen</td><td>12113</td><td>38,03</td><td>19742</td><td>61,97</td><td>63,79</td></tr>
+<tr><td>Solothurn</td><td>21454</td><td>28,06</td><td>54996</td><td>71,94</td><td>42,32</td></tr>
+<tr><td>Schwyz</td><td>18995</td><td>35,10</td><td>35125</td><td>64,90</td><td>50,51</td></tr>
+<tr><td>Thurgau</td><td>27777</td><td>35,49</td><td>50493</td><td>64,51</td><td>44,73</td></tr>
+<tr><td>Tessin</td><td>34182</td><td>38,35</td><td>54944</td><td>61,65</td><td>40,77</td></tr>
+<tr><td>Uri</td><td>4036</td><td>34,38</td><td>7702</td><td>65,62</td><td>43,91</td></tr>
+<tr><td>Waadt</td><td>58462</td><td>27,43</td><td>154695</td><td>72,57</td><td>45,68</td></tr>
+<tr><td>Wallis</td><td>28310</td><td>28,95</td><td>69478</td><td>71,05</td><td>42,85</td></tr>
+<tr><td>Zug</td><td>15528</td><td>42,87</td><td>20692</td><td>57,13</td><td>46,50</td></tr>
+</tbody></table>
+<table><tbody>
+<tr><td>Stände: 0 Ja, 17 Nein (am Ständemehr gescheitert)</td></tr>
+<tr><td>Ja-Kantone: -</td></tr>
+<tr><td>Nein-Kantone: AG, AI, AR, FR, GL, GR, LU, NE, NW, OW, SH, SO, SZ, TG, TI, UR, VD, VS, ZG</td></tr>
+<tr><td>Noch nicht ausgezählt: BE, BL, BS, GE, JU, SG, ZH</td></tr>
+<tr><td>SRG-Hochrechnung um 13:08 Uhr: 32 Prozent Ja, 68 Prozent Nein</td></tr>
+</tbody></table>
+
+            </body>
+          </html>
+        </inlineXML>
+      </contentSet>
+    </newsItem>
+  </itemSet>
+</newsMessage>
