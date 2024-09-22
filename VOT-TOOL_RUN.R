@@ -29,6 +29,7 @@ source("./Vot-Tool/write_DB_entries.R", encoding = "UTF-8")
 ###Load DBs
 source("./Vot-Tool/load_DBs.R", encoding = "UTF-8")
 
+
 #####CREATE NEWS AND SEND MAIL IF CANTON IS COMPLETE#####
 for (i in 1:nrow(output_overview)) {
     canton_results <- cantons_results %>%
