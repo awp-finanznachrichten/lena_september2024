@@ -1,12 +1,12 @@
 "ID","Gemeinde_color","Ja_Stimmen_In_Prozent","Nein_Stimmen_In_Prozent","Gemeinde_fr","Text_fr"
-1701,"aucun résultat",0,0,"Baar (ZG)","Les résultats ne sont pas encore connus dans cette commune."
-1702,"aucun résultat",0,0,"Cham (ZG)","Les résultats ne sont pas encore connus dans cette commune."
-1703,"aucun résultat",0,0,"Hünenberg (ZG)","Les résultats ne sont pas encore connus dans cette commune."
-1704,"aucun résultat",0,0,"Menzingen (ZG)","Les résultats ne sont pas encore connus dans cette commune."
-1705,"aucun résultat",0,0,"Neuheim (ZG)","Les résultats ne sont pas encore connus dans cette commune."
-1706,"aucun résultat",0,0,"Oberägeri (ZG)","Les résultats ne sont pas encore connus dans cette commune."
-1707,"aucun résultat",0,0,"Risch (ZG)","Les résultats ne sont pas encore connus dans cette commune."
-1708,"aucun résultat",0,0,"Steinhausen (ZG)","Les résultats ne sont pas encore connus dans cette commune."
-1709,"aucun résultat",0,0,"Unterägeri (ZG)","Les résultats ne sont pas encore connus dans cette commune."
-1710,"aucun résultat",0,0,"Walchwil (ZG)","Les résultats ne sont pas encore connus dans cette commune."
-1711,"aucun résultat",0,0,"Zoug (ZG)","Les résultats ne sont pas encore connus dans cette commune."
+1701,"contre-proposition oui",47.2,52.8,"Baar (ZG)",
+1702,"contre-proposition oui",48.5,51.5,"Cham (ZG)",
+1703,"contre-proposition oui",45,55,"Hünenberg (ZG)",
+1704,"deux fois non",41.1,58.9,"Menzingen (ZG)",
+1705,"deux fois non",39,61,"Neuheim (ZG)",
+1706,"deux fois non",36.8,63.2,"Oberägeri (ZG)",
+1707,"contre-proposition oui",44.1,55.9,"Risch (ZG)",
+1708,"contre-proposition oui",49.4,50.6,"Steinhausen (ZG)",
+1709,"deux fois non",38.7,61.3,"Unterägeri (ZG)",
+1710,"deux fois non",34.2,65.8,"Walchwil (ZG)",
+1711,"contre-proposition oui",49.2,50.8,"Zoug (ZG)",
