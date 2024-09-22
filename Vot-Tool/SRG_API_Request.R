@@ -17,8 +17,9 @@ data <- GET(link)
 content <- read_xml(data)
 timestamp <- strptime(xml_text(xml_find_all(content,".//LastUpdate")),format = '%Y-%m-%dT%H:%M:%S')
 
+
 if (length(timestamp) > 0) { 
-  if (timestamp != current_trend$last_update) {
+  if ((timestamp != current_trend$last_update) & (as.Date(timestamp) == Sys.Date())) {
 print(paste0("New trend found for ",vorlagen$text[v]))
 trend <- xml_text(xml_find_all(content,".//ResultCondition"))
 
@@ -67,7 +68,7 @@ content <- read_xml(data)
 timestamp <- strptime(xml_text(xml_find_all(content,".//LastUpdate")),format = '%Y-%m-%dT%H:%M:%S')
 
 if (length(timestamp) > 0) { 
-  if (timestamp != current_extrapolation$last_update) {
+  if ((timestamp != current_extrapolation$last_update) & (as.Date(timestamp) == Sys.Date())) {
   print(paste0("New extrapolation 1 found for ",vorlagen$text[v]))
   
   hochrechnung <- xml_text(xml_find_all(content,".//ResultCondition"))
@@ -128,7 +129,7 @@ content <- read_xml(data)
 timestamp <- strptime(xml_text(xml_find_all(content,".//LastUpdate")),format = '%Y-%m-%dT%H:%M:%S')
 
 if (length(timestamp) > 0) { 
-  if (timestamp != current_extrapolation$last_update) {
+  if ((timestamp != current_extrapolation$last_update) & (as.Date(timestamp) == Sys.Date())) {
     print(paste0("New extrapolation 2 found for ",vorlagen$text[v]))
     
     hochrechnung <- xml_text(xml_find_all(content,".//ResultCondition"))
@@ -187,7 +188,7 @@ content <- read_xml(data)
 timestamp <- strptime(xml_text(xml_find_all(content,".//LastUpdate")),format = '%Y-%m-%dT%H:%M:%S')
 
 if (length(timestamp) > 0) { 
-  if (timestamp != current_extrapolation$last_update) {
+  if ((timestamp != current_extrapolation$last_update) & (as.Date(timestamp) == Sys.Date())) {
     print(paste0("New extrapolation 3 found for ",vorlagen$text[v]))
     
     hochrechnung <- xml_text(xml_find_all(content,".//ResultCondition"))
