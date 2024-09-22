@@ -1,6 +1,6 @@
 "ID","Gemeinde_color","Ja_Stimmen_In_Prozent","Nein_Stimmen_In_Prozent","Gemeinde_de","Text_de"
 2008,70.3,70.3,29.7,"Châtillon FR",
-2011,50,0,0,"Cugy FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
+2011,68.5,68.5,31.5,"Cugy FR",
 2016,67.4,67.4,32.6,"Fétigny FR",
 2022,57.9,57.9,42.1,"Gletterens FR",
 2025,68.1,68.1,31.9,"Lully FR",
@@ -19,11 +19,11 @@
 2055,75.7,75.7,24.3,"Cheyres-Châbles FR",
 2061,55.9,55.9,44.1,"Auboranges FR",
 2063,71.5,71.5,28.5,"Billens-Hennens FR",
-2066,50,0,0,"Chapelle (Glâne) FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
+2066,71,71,29,"Chapelle (Glâne) FR",
 2067,63.1,63.1,36.9,"Le Châtelard FR",
 2068,73.9,73.9,26.1,"Châtonnaye FR",
 2072,74,74,26,"Ecublens FR",
-2079,50,0,0,"Grangettes FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
+2079,64.4,64.4,35.6,"Grangettes FR",
 2086,72.7,72.7,27.3,"Massonnens FR",
 2087,64.7,64.7,35.3,"Mézières FR",
 2089,60.7,60.7,39.3,"Montet (Glâne) FR",
@@ -38,7 +38,7 @@
 2121,63.1,63.1,36.9,"Haut-Intyamon FR",
 2122,68.2,68.2,31.8,"Pont-en-Ogoz FR",
 2123,63.6,63.6,36.4,"Botterens FR",
-2124,50,0,0,"Broc FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
+2124,73.9,73.9,26.1,"Broc FR",
 2125,71.9,71.9,28.1,"Bulle FR",
 2128,59.8,59.8,40.2,"Châtel-sur-Montsalvens FR",
 2129,72.4,72.4,27.6,"Corbières FR",
@@ -67,7 +67,7 @@
 2183,50,0,0,"Corminboeuf FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
 2186,71.8,71.8,28.2,"Cottens FR",
 2194,66.2,66.2,33.8,"Ferpicloz FR",
-2196,50,0,0,"Freiburg FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
+2196,80.1,80.1,19.9,"Freiburg FR",
 2197,50,0,0,"Givisiez FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
 2198,72.1,72.1,27.9,"Granges-Paccot FR",
 2200,69,69,31,"Grolley FR",
@@ -85,17 +85,17 @@
 2235,68.4,68.4,31.6,"La Sonnaz FR",
 2236,50,0,0,"Gibloux FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
 2237,72.8,72.8,27.2,"Prez FR",
-2238,50,0,0,"Bois-d'Amont FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
+2238,68.8,68.8,31.2,"Bois-d'Amont FR",
 2250,73.2,73.2,26.8,"Gurwolf FR",
 2254,65.7,65.7,34.3,"Courtepin FR",
 2257,71.6,71.6,28.4,"Cressier FR",
 2258,67.4,67.4,32.6,"Fräschels FR",
 2261,62.7,62.7,37.3,"Greng FR",
-2262,50,0,0,"Gurmels FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
+2262,59.7,59.7,40.3,"Gurmels FR",
 2265,63.6,63.6,36.4,"Kerzers FR",
 2266,63.3,63.3,36.7,"Kleinbösingen FR",
 2271,66.2,66.2,33.8,"Merlach FR",
-2272,50,0,0,"Misery-Courtion FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
+2272,65.5,65.5,34.5,"Misery-Courtion FR",
 2274,67.6,67.6,32.4,"Muntelier FR",
 2275,63.8,63.8,36.2,"Murten FR",
 2276,50,0,0,"Ried bei Kerzers FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
@@ -118,7 +118,7 @@
 2309,62.8,62.8,37.2,"Wünnewil-Flamatt FR",
 2321,72.2,72.2,27.8,"Attalens FR",
 2323,74.7,74.7,25.3,"Bossonnens FR",
-2325,50,0,0,"Châtel-Saint-Denis FR","Die Resultate dieser Gemeinde sind noch nicht bekannt."
+2325,72.3,72.3,27.7,"Châtel-Saint-Denis FR",
 2328,70.8,70.8,29.2,"Granges (Veveyse) FR",
 2333,74.7,74.7,25.3,"Remaufens FR",
 2335,71,71,29,"Saint-Martin FR",
