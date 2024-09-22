@@ -92,6 +92,6 @@ time_end <- Sys.time()
 cat(time_end-time_start)
 }
 
-#Sys.sleep(10)
+Sys.sleep(10)
 }
 
