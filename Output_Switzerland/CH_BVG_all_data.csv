@@ -639,17 +639,17 @@
 8,1630,31.803628602,1490,3195,40.091001011,4758,11868,4685,TRUE,"GL","Glarus Nord","Glarus Nord","Glarus Nord","Glarus Nord GL","Glarus Nord (GL)","Glarus Nord (GL)","Glarus","Glaris","Glarona",32.528421609,FALSE,FALSE
 8,1631,31.888544892,1030,2200,46.804270463,3288,7025,3230,TRUE,"GL","Glarus Süd","Glarus Süd","Glarus Süd","Glarus Süd GL","Glarus Süd (GL)","Glarus Süd (GL)","Glarus","Glaris","Glarona",32.528421609,FALSE,FALSE
 8,1632,34.12004662,1171,2261,44.747819492,3540,7911,3432,TRUE,"GL","Glarus","Glaris","Glarona","Glarus GL","Glaris (GL)","Glarona (GL)","Glarus","Glaris","Glarona",32.528421609,FALSE,FALSE
-9,1701,,,,,,,,FALSE,"ZG","Baar","Baar","Baar","Baar ZG","Baar (ZG)","Baar (ZG)","Zug","Zoug","Zugo",,FALSE,FALSE
-9,1702,,,,,,,,FALSE,"ZG","Cham","Cham","Cham","Cham ZG","Cham (ZG)","Cham (ZG)","Zug","Zoug","Zugo",,FALSE,FALSE
-9,1703,,,,,,,,FALSE,"ZG","Hünenberg","Hünenberg","Hünenberg","Hünenberg ZG","Hünenberg (ZG)","Hünenberg (ZG)","Zug","Zoug","Zugo",,FALSE,FALSE
-9,1704,,,,,,,,FALSE,"ZG","Menzingen","Menzingen","Menzingen","Menzingen ZG","Menzingen (ZG)","Menzingen (ZG)","Zug","Zoug","Zugo",,FALSE,FALSE
-9,1705,,,,,,,,FALSE,"ZG","Neuheim","Neuheim","Neuheim","Neuheim ZG","Neuheim (ZG)","Neuheim (ZG)","Zug","Zoug","Zugo",,FALSE,FALSE
-9,1706,,,,,,,,FALSE,"ZG","Oberägeri","Oberägeri","Oberägeri","Oberägeri ZG","Oberägeri (ZG)","Oberägeri (ZG)","Zug","Zoug","Zugo",,FALSE,FALSE
-9,1707,,,,,,,,FALSE,"ZG","Risch","Risch","Risch","Risch ZG","Risch (ZG)","Risch (ZG)","Zug","Zoug","Zugo",,FALSE,FALSE
-9,1708,,,,,,,,FALSE,"ZG","Steinhausen","Steinhausen","Steinhausen","Steinhausen ZG","Steinhausen (ZG)","Steinhausen (ZG)","Zug","Zoug","Zugo",,FALSE,FALSE
-9,1709,,,,,,,,FALSE,"ZG","Unterägeri","Unterägeri","Unterägeri","Unterägeri ZG","Unterägeri (ZG)","Unterägeri (ZG)","Zug","Zoug","Zugo",,FALSE,FALSE
-9,1710,,,,,,,,FALSE,"ZG","Walchwil","Walchwil","Walchwil","Walchwil ZG","Walchwil (ZG)","Walchwil (ZG)","Zug","Zoug","Zugo",,FALSE,FALSE
-9,1711,,,,,,,,FALSE,"ZG","Zug","Zoug","Zugo","Zug ZG","Zoug (ZG)","Zugo (ZG)","Zug","Zoug","Zugo",,FALSE,FALSE
+9,1701,42.650277825,2533,3406,41.090760537,6035,14687,5939,TRUE,"ZG","Baar","Baar","Baar","Baar ZG","Baar (ZG)","Baar (ZG)","Zug","Zoug","Zugo",42.8713418,FALSE,FALSE
+9,1702,39.979274611,1929,2896,44.865660655,4876,10868,4825,TRUE,"ZG","Cham","Cham","Cham","Cham ZG","Cham (ZG)","Cham (ZG)","Zug","Zoug","Zugo",42.8713418,FALSE,FALSE
+9,1703,42.823129252,1259,1681,49.262634631,2973,6035,2940,TRUE,"ZG","Hünenberg","Hünenberg","Hünenberg","Hünenberg ZG","Hünenberg (ZG)","Hünenberg (ZG)","Zug","Zoug","Zugo",42.8713418,FALSE,FALSE
+9,1704,41.44200627,661,934,51.077313054,1612,3156,1595,TRUE,"ZG","Menzingen","Menzingen","Menzingen","Menzingen ZG","Menzingen (ZG)","Menzingen (ZG)","Zug","Zoug","Zugo",42.8713418,FALSE,FALSE
+9,1705,39.673913043,292,444,48.412184057,747,1543,736,TRUE,"ZG","Neuheim","Neuheim","Neuheim","Neuheim ZG","Neuheim (ZG)","Neuheim (ZG)","Zug","Zoug","Zugo",42.8713418,FALSE,FALSE
+9,1706,43.184079602,868,1142,52.410415055,2033,3879,2010,TRUE,"ZG","Oberägeri","Oberägeri","Oberägeri","Oberägeri ZG","Oberägeri (ZG)","Oberägeri (ZG)","Zug","Zoug","Zugo",42.8713418,FALSE,FALSE
+9,1707,38.212478921,1133,1832,43.064539313,2996,6957,2965,TRUE,"ZG","Risch","Risch","Risch","Risch ZG","Risch (ZG)","Risch (ZG)","Zug","Zoug","Zugo",42.8713418,FALSE,FALSE
+9,1708,39.787525703,1161,1757,46.153846154,2940,6370,2918,TRUE,"ZG","Steinhausen","Steinhausen","Steinhausen","Steinhausen ZG","Steinhausen (ZG)","Steinhausen (ZG)","Zug","Zoug","Zugo",42.8713418,FALSE,FALSE
+9,1709,40.643712575,1086,1586,46.203609125,2714,5874,2672,TRUE,"ZG","Unterägeri","Unterägeri","Unterägeri","Unterägeri ZG","Unterägeri (ZG)","Unterägeri (ZG)","Zug","Zoug","Zugo",42.8713418,FALSE,FALSE
+9,1710,48.500428449,566,601,53.477868112,1184,2214,1167,TRUE,"ZG","Walchwil","Walchwil","Walchwil","Walchwil ZG","Walchwil (ZG)","Walchwil (ZG)","Zug","Zoug","Zugo",42.8713418,FALSE,FALSE
+9,1711,47.793682716,4040,4413,49.538479289,8587,17334,8453,TRUE,"ZG","Zug","Zoug","Zugo","Zug ZG","Zoug (ZG)","Zugo (ZG)","Zug","Zoug","Zugo",42.8713418,FALSE,FALSE
 10,2008,24.590163934,45,138,51.086956522,188,368,183,TRUE,"FR","Châtillon FR","Châtillon (FR)","Châtillon FR","Châtillon FR","Châtillon (FR)","Châtillon (FR)","Freiburg","Fribourg","Friburgo",26.493518267,FALSE,FALSE
 10,2011,26.15658363,147,415,45.664280032,574,1257,562,TRUE,"FR","Cugy FR","Cugy (FR)","Cugy FR","Cugy FR","Cugy (FR)","Cugy (FR)","Freiburg","Fribourg","Friburgo",26.493518267,FALSE,FALSE
 10,2016,18.397626113,62,275,42.945544554,347,808,337,TRUE,"FR","Fétigny","Fétigny","Fétigny","Fétigny FR","Fétigny (FR)","Fétigny (FR)","Freiburg","Fribourg","Friburgo",26.493518267,FALSE,FALSE
