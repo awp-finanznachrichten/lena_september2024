@@ -1,8 +1,12 @@
 ###GET CURRENT RESULTS ###
 mydb <- connectDB(db_name="sda_votes")
-rs <- dbSendQuery(mydb, "SELECT * FROM cantons_results WHERE votes_ID = '6710' OR votes_ID ='6720'")
+rs <- dbSendQuery(mydb, "SELECT * FROM cantons_results")
 cantons_results <- DBI::fetch(rs,n=-1)
 dbDisconnectAll()
+
+cantons_results <- cantons_results %>%
+  filter(grepl(paste(vorlagen$id,collapse="|"),votes_ID) == TRUE)
+
 
 ###GET OUTPUT OVERVIEW###
 mydb <- connectDB(db_name="sda_votes")
